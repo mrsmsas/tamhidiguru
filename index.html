@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard eTamhidi MRSM SAS</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--hijau:#0f5c4a;--hijau2:#17806a;--emas:#c79a3b;--bg:#f3f6f4;--kad:#fff;--teks:#1c2b27;--kabur:#66756f;--garis:#e1e8e4;--merah:#c0392b;--kelabu:#c5cfca}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--teks);line-height:1.45;min-height:100vh;display:flex;flex-direction:column}
+header{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;text-align:center;padding:18px 16px 54px;border-bottom:3px solid var(--emas)}
+header img{height:56px;display:block;margin:0 auto 8px}
+header h1{margin:0;font-size:1.3rem}
+header p{margin:4px 0 0;font-size:.85rem;opacity:.9}
+main{flex:1;width:100%;max-width:1180px;margin:-36px auto 0;padding:0 16px 32px}
+.tab{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.tab button{border:0;padding:9px 20px;border-radius:999px;background:rgba(255,255,255,.88);color:var(--hijau);font-weight:600;cursor:pointer;font-size:.9rem;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.tab button.aktif{background:var(--emas);color:#fff}
+.kad{background:var(--kad);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(15,92,74,.08);margin-bottom:16px}
+.sempit{max-width:480px;margin-left:auto;margin-right:auto}
+h2{font-size:1.02rem;margin:0 0 12px;color:var(--hijau)}
+label{font-size:.8rem;font-weight:600;color:var(--kabur);display:block;margin-bottom:4px}
+input,select{width:100%;padding:10px 12px;border:1px solid var(--garis);border-radius:9px;font-size:.95rem;background:#fff;color:var(--teks)}
+input:focus,select:focus{outline:2px solid var(--hijau2);outline-offset:1px}
+.btn{border:0;background:var(--hijau);color:#fff;padding:10px 18px;border-radius:9px;font-weight:600;font-size:.92rem;cursor:pointer}
+.btn:disabled{opacity:.6;cursor:wait}
+.btn.luar{background:#fff;color:var(--hijau);border:1px solid var(--hijau)}
+.btn.kecil{padding:7px 12px;font-size:.82rem}
+.baris{display:flex;gap:8px}.baris>input{flex:1}
+.ralat{background:#fdecea;color:var(--merah);padding:10px 12px;border-radius:9px;font-size:.9rem;margin-top:12px}
+.nota{color:var(--kabur);font-size:.82rem}
+.atas{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tapis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px}
+.kpi div{background:var(--kad);border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(15,92,74,.08);border-left:4px solid var(--emas)}
+.kpi b{display:block;font-size:1.55rem;color:var(--hijau)}
+.kpi small{color:var(--kabur);font-size:.8rem}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:16px}
+.grid2 .kad{margin:0}
+.pai{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.pai .bulat{width:150px;height:150px;border-radius:50%;flex:none;position:relative}
+.pai .bulat::after{content:"";position:absolute;inset:26%;background:var(--kad);border-radius:50%}
+.pai ul{list-style:none;margin:0;padding:0;font-size:.88rem;flex:1;min-width:150px}
+.pai li{display:flex;align-items:center;gap:8px;padding:3px 0}
+.pai li i{width:12px;height:12px;border-radius:3px;flex:none}
+.pai li b{margin-left:auto;white-space:nowrap}
+.jadual{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--garis);white-space:nowrap}
+th{color:var(--kabur);font-size:.72rem;text-transform:uppercase;letter-spacing:.3px;background:#f8faf9}
+td.n,th.n{text-align:right}
+tbody tr.klik{cursor:pointer}tbody tr.klik:hover{background:#f1f7f4}
+.bar{height:9px;width:80px;background:var(--garis);border-radius:99px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:6px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--hijau2),var(--emas))}
+.matriks th.s{max-width:74px;overflow:hidden;text-overflow:ellipsis;text-align:center;padding:7px 4px}
+.matriks td.s{text-align:center;padding:5px 4px}
+.matriks td:first-child,.matriks th:first-child{position:sticky;left:0;background:#fff;z-index:1}
+.matriks th:first-child{background:#f8faf9}
+.lencana{font-size:.7rem;font-weight:700;padding:2px 7px;border-radius:99px;white-space:nowrap;display:inline-block}
+.S{background:#e3f4ec;color:#0f6b4d}.TS{background:#fdecea;color:var(--merah)}.STS{background:#fdf2dc;color:#8a5a08}.X{background:#eef1f0;color:var(--kabur)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.info div{background:var(--bg);border-radius:9px;padding:8px 10px}
+.info small{display:block;color:var(--kabur);font-size:.72rem;text-transform:uppercase}
+.senarai{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px}
+.senarai li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--garis);border-radius:9px;font-size:.86rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto;z-index:9}
+.modal .kad{max-width:760px;width:100%}
+footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
+[hidden]{display:none!important}
+@media print{header,.tab,.tapis,.btn,footer,#bar{display:none!important}main{margin:0;max-width:none}.kad{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+  <img id="logo" alt="Logo MRSM SAS" hidden>
+  <h1>Dashboard eTamhidi</h1>
+  <p>Analisa Tamhidi Hafazan &middot; Guru / Admin &middot; MRSM Sultan Azlan Shah</p>
+</header>
+
+<main>
+  <div id="kLogin" class="kad sempit">
+    <h2>Log Masuk Guru / Admin</h2>
+    <form id="fLogin">
+      <label for="pw">Kata Laluan</label>
+      <div class="baris">
+        <input id="pw" type="password" autocomplete="current-password" required>
+        <button class="btn" id="bLogin">Log Masuk</button>
+      </div>
+    </form>
+    <div id="ralatLogin" class="ralat" hidden></div>
+  </div>
+
+  <div id="kDash" hidden>
+    <div class="tab" id="tab">
+      <button data-p="pSemak" class="aktif">Semakan</button>
+      <button data-p="pHome">Homeroom</button>
+      <button data-p="pAnalisa">Analisa</button>
+    </div>
+    <div class="atas" id="bar">
+      <span class="nota" id="masa"></span>
+      <span>
+        <button class="btn luar kecil" id="bSegar">Muat Semula</button>
+        <button class="btn luar kecil" id="bCetak">Cetak</button>
+        <button class="btn luar kecil" id="bKeluar">Log Keluar</button>
+      </span>
+    </div>
+
+    <!-- TAB 1: SEMAKAN MERENTAS TINGKATAN -->
+    <section id="pSemak">
+      <div class="kad">
+        <h2>Semakan Keputusan (Semua Tingkatan)</h2>
+        <div class="tapis">
+          <div><label for="sCari">No. Maktab</label><input id="sCari" placeholder="Contoh: AK261124" autocomplete="off" autocapitalize="characters" maxlength="12"></div>
+          <div><label for="sTk">Tingkatan</label><select id="sTk"></select></div>
+          <div><label for="sKelas">Kelas</label><select id="sKelas"></select></div>
+          <div><label for="sStatus">Status</label>
+            <select id="sStatus"><option value="">Semua</option><option value="tamat">Tamat semua</option><option value="sedang">Sedang berjalan</option><option value="belum">Belum ada rekod</option></select></div>
+          <div><label for="sSusun">Susunan</label>
+            <select id="sSusun"><option value="nama">Nama</option><option value="tinggi">Pencapaian tertinggi</option><option value="rendah">Pencapaian terendah</option></select></div>
+        </div>
+      </div>
+      <div class="kad" id="sTepat" hidden></div>
+      <div class="kad">
+        <div class="atas"><h2 style="margin:0">Keputusan <span id="sBil" class="nota"></span></h2><button class="btn luar kecil" id="sCsv">Muat Turun CSV</button></div>
+        <div class="jadual"><table><thead><tr><th>Bil</th><th>Nama</th><th>Tkt</th><th>Kelas</th><th>No. Maktab</th><th>Homeroom</th><th class="n">Selesai</th><th class="n">TS</th><th>Pencapaian</th></tr></thead><tbody id="sBadan"></tbody></table></div>
+        <p class="nota">Klik pada baris pelajar untuk melihat perincian surah.</p>
+      </div>
+    </section>
+
+    <!-- TAB 2: HOMEROOM -->
+    <section id="pHome" hidden>
+      <div class="kad">
+        <h2>Semakan Mengikut Homeroom</h2>
+        <div class="tapis">
+          <div><label for="hTk">Tingkatan</label><select id="hTk"></select></div>
+          <div><label for="hHome">Homeroom</label><select id="hHome"></select></div>
+        </div>
+      </div>
+      <div class="kpi" id="hKpi"></div>
+      <div class="kad">
+        <div class="atas"><h2 style="margin:0" id="hTajuk"></h2><button class="btn luar kecil" id="hCsv">Muat Turun CSV</button></div>
+        <div class="jadual"><table class="matriks"><thead id="hKepala"></thead><tbody id="hBadan"></tbody></table></div>
+        <p class="nota">S = Selesai &middot; TS = Tidak Selesai &middot; &ndash; = belum direkod. Klik baris untuk perincian.</p>
+      </div>
+    </section>
+
+    <!-- TAB 3: ANALISA -->
+    <section id="pAnalisa" hidden>
+      <div class="kad">
+        <div class="tapis"><div><label for="aSkop">Skop Analisa</label><select id="aSkop"></select></div></div>
+      </div>
+      <div class="kpi" id="aKpi"></div>
+      <div class="grid2">
+        <div class="kad"><h2>Status Pelajar</h2><div id="aPai1"></div></div>
+        <div class="kad"><h2>Status Bacaan (semua surah)</h2><div id="aPai2"></div></div>
+      </div>
+      <div class="kad"><h2 id="aT1Tajuk"></h2><div class="jadual"><table><thead><tr><th id="aT1Lajur"></th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">Sedang</th><th class="n">Belum</th><th class="n">% Tamat</th><th>Purata Pencapaian</th></tr></thead><tbody id="aT1"></tbody></table></div></div>
+      <div class="kad" id="aSurahKad"><h2>Peratus Selesai Mengikut Surah</h2><div class="jadual"><table><thead><tr><th>Surah</th><th class="n">Selesai</th><th class="n">Tidak Selesai</th><th class="n">Belum Direkod</th><th>% Selesai</th></tr></thead><tbody id="aSurah"></tbody></table></div></div>
+      <div class="kad"><h2>Kedudukan Homeroom</h2><div class="jadual"><table><thead><tr><th>Bil</th><th>Homeroom</th><th>Tkt</th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">% Tamat</th><th>Purata Pencapaian</th></tr></thead><tbody id="aHome"></tbody></table></div></div>
+    </section>
+  </div>
+</main>
+
+<div class="modal" id="modal" hidden><div class="kad"><div class="atas"><h2 style="margin:0">Perincian Pelajar</h2><button class="btn luar kecil" id="bTutup">Tutup</button></div><div id="isiModal"></div></div></div>
+
+<footer>Dibangunkan Oleh Unit Sains dan Unit ICT MRSM SAS 2026</footer>
+
+<script>
+/* ================== TETAPAN ================== */
+const API_URL  = 'https://script.google.com/macros/s/AKfycbwREoGJ-BrkVD5X8VNdA91OLRPOdNru88zCkmjkkDjABlFFqRdFWJD5I1sI4rTwZx7iUA/exec';   // https://script.google.com/macros/s/XXXX/exec
+const LOGO_URL = '';                                      // cth: 'logo.png' (letak fail dalam repo yang sama)
+/* ============================================= */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LABEL = {S:'Selesai', TS:'Tidak Selesai', STS:'STS', '':'Belum direkod'};
+const WARNA = {tamat:'#17806a', sedang:'#c79a3b', belum:'#c5cfca', ts:'#c0392b'};
+const sesi = {
+  get(){ try { return sessionStorage.getItem('etamhidi_token') || ''; } catch(e){ return this._t || ''; } },
+  set(t){ this._t = t; try { t ? sessionStorage.setItem('etamhidi_token', t) : sessionStorage.removeItem('etamhidi_token'); } catch(e){} }
+};
+let DATA = null, SEMUA = [], SENARAI_S = [], SENARAI_H = [];
+
+if (LOGO_URL) { $('logo').src = LOGO_URL; $('logo').hidden = false; }
+
+async function api(isi) {
+  if (!/^https:\/\/script\.google\.com\//.test(API_URL)) throw new Error('API_URL belum ditetapkan dalam index.html.');
+  const r = await fetch(API_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(isi)});
+  if (!r.ok) throw new Error('Pelayan tidak dapat dihubungi (' + r.status + ').');
+  return r.json();
+}
+function ralat(el, m){ el.textContent = m || ''; el.hidden = !m; }
+
+/* ---------- Pengiraan ---------- */
+function kira(p){
+  const n = p.status.length, s = p.status.filter(x => x === 'S').length, ts = p.status.filter(x => x === 'TS' || x === 'STS').length;
+  const kosong = s + ts === 0;
+  return {n, s, ts, pct: n ? Math.round(s / n * 100) : 0, st: n && s === n ? 'tamat' : kosong ? 'belum' : 'sedang'};
+}
+function ringkas(arr){
+  const n = arr.length, c = st => arr.filter(p => p.k.st === st).length, tamat = c('tamat');
+  return {n, tamat, sedang: c('sedang'), belum: c('belum'),
+    pTamat: n ? Math.round(tamat / n * 100) : 0,
+    purata: n ? Math.round(arr.reduce((a,p) => a + p.k.pct, 0) / n) : 0};
+}
+function kumpul(arr, fn){ const m = new Map(); arr.forEach(p => { const k = fn(p); m.has(k) || m.set(k, []); m.get(k).push(p); }); return m; }
+const unik = arr => [...new Set(arr.filter(Boolean))].sort();
+const bar = pct => `<span class="bar"><i style="width:${pct}%"></i></span>${pct}%`;
+const pilihan = (el, senarai, semua) => el.innerHTML = (semua ? `<option value="">${semua}</option>` : '') + senarai.map(x => `<option>${esc(x)}</option>`).join('');
+function pai(bahagian){
+  const jum = bahagian.reduce((a,b) => a + b.v, 0);
+  if (!jum) return '<p class="nota">Tiada data.</p>';
+  let mula = 0;
+  const henti = bahagian.map(b => { const a = mula, z = mula += b.v / jum * 100; return `${b.w} ${a}% ${z}%`; }).join(',');
+  return `<div class="pai"><div class="bulat" style="background:conic-gradient(${henti})"></div><ul>${
+    bahagian.map(b => `<li><i style="background:${b.w}"></i>${esc(b.l)}<b>${b.v} (${Math.round(b.v / jum * 100)}%)</b></li>`).join('')}</ul></div>`;
+}
+function kadPelajar(p){
+  return `<h2>${esc(p.nama)}</h2>
+    <div class="info">
+      <div><small>Tingkatan</small><b>${esc(p.tk)}</b></div><div><small>Kelas</small><b>${esc(p.kelas)}</b></div>
+      <div><small>No. Maktab</small><b>${esc(p.maktab)}</b></div><div><small>Homeroom</small><b>${esc(p.homeroom)}</b></div>
+      <div><small>Selesai</small><b>${p.k.s} / ${p.k.n} (${p.k.pct}%)</b></div>
+    </div>
+    <ul class="senarai">${DATA[p.tk].surah.map((s,i) => `<li><span>${esc(s)}</span><span class="lencana ${p.status[i]||'X'}">${LABEL[p.status[i]||'']}</span></li>`).join('')}</ul>
+    ${p.catatan ? `<p><b>Catatan:</b> ${esc(p.catatan)}</p>` : ''}${p.ulasan ? `<p><b>Ulasan:</b> ${esc(p.ulasan)}</p>` : ''}`;
+}
+function bukaModal(p){ if (!p) return; $('isiModal').innerHTML = kadPelajar(p); $('modal').hidden = false; }
+function csv(nama, baris){
+  const sel = x => '"' + String(x).replace(/"/g,'""') + '"', a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['﻿' + baris.map(r => r.map(sel).join(',')).join('\r\n')], {type:'text/csv;charset=utf-8'}));
+  a.download = nama; a.click(); URL.revokeObjectURL(a.href);
+}
+
+/* ---------- Log masuk & data ---------- */
+$('fLogin').onsubmit = async e => {
+  e.preventDefault();
+  const b = $('bLogin'); ralat($('ralatLogin')); b.disabled = true; b.textContent = 'Menyemak...';
+  try {
+    const d = await api({action:'login', password:$('pw').value});
+    if (!d.ok) ralat($('ralatLogin'), d.mesej);
+    else { sesi.set(d.token); $('pw').value = ''; await muat(); }
+  } catch(err){ ralat($('ralatLogin'), err.message); }
+  b.disabled = false; b.textContent = 'Log Masuk';
+};
+async function muat(){
+  $('bSegar').disabled = true;
+  try {
+    const d = await api({action:'data', token:sesi.get()});
+    if (!d.ok) { keluar(false); ralat($('ralatLogin'), d.mesej); return; }
+    DATA = d.tingkatan; SEMUA = [];
+    Object.keys(DATA).forEach(tk => DATA[tk].pelajar.forEach(p => { p.tk = tk; p.k = kira(p); SEMUA.push(p); }));
+    $('masa').textContent = 'Data setakat ' + new Date(d.dikemaskini).toLocaleString('ms-MY');
+    $('kLogin').hidden = true; $('kDash').hidden = false;
+    const tks = Object.keys(DATA);
+    pilihan($('sTk'), tks, 'Semua'); pilihan($('sKelas'), unik(SEMUA.map(p => p.kelas)), 'Semua');
+    pilihan($('hTk'), tks); isiHomeroom();
+    pilihan($('aSkop'), tks, 'Keseluruhan (F1–F5)');
+    paparSemak(); paparHome(); paparAnalisa();
+  } catch(err){ $('kDash').hidden = true; $('kLogin').hidden = false; ralat($('ralatLogin'), err.message); }
+  $('bSegar').disabled = false;
+}
+function keluar(hantar){
+  if (hantar && sesi.get()) api({action:'logout', token:sesi.get()}).catch(() => {});
+  sesi.set(''); DATA = null; SEMUA = []; $('kDash').hidden = true; $('kLogin').hidden = false;
+}
+$('bKeluar').onclick = () => keluar(true);
+$('bSegar').onclick = muat;
+$('bCetak').onclick = () => window.print();
+$('tab').onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  [...$('tab').children].forEach(x => { x.classList.toggle('aktif', x === b); $(x.dataset.p).hidden = x !== b; });
+};
+$('bTutup').onclick = () => $('modal').hidden = true;
+$('modal').onclick = e => { if (e.target === $('modal')) $('modal').hidden = true; };
+
+/* ---------- Tab 1: Semakan ---------- */
+function paparSemak(){
+  const q = $('sCari').value.toUpperCase().replace(/[^A-Z0-9]/g, ''), tk = $('sTk').value, kl = $('sKelas').value, st = $('sStatus').value, su = $('sSusun').value;
+  const ps = SEMUA.filter(p => (!tk || p.tk === tk) && (!kl || p.kelas === kl) && (!st || p.k.st === st) &&
+    (!q || p.maktab.includes(q)));
+  const tepat = q ? SEMUA.filter(p => p.maktab === q) : [];
+  $('sTepat').hidden = !tepat.length; $('sTepat').innerHTML = tepat.map(kadPelajar).join('<hr>');
+  ps.sort((a,b) => su === 'tinggi' ? b.k.pct - a.k.pct : su === 'rendah' ? a.k.pct - b.k.pct : a.tk.localeCompare(b.tk) || a.nama.localeCompare(b.nama));
+  SENARAI_S = ps; $('sBil').textContent = '(' + ps.length + ' pelajar)';
+  $('sBadan').innerHTML = ps.map((p,i) =>
+    `<tr class="klik" data-i="${i}"><td>${i+1}</td><td>${esc(p.nama)}</td><td>${p.tk}</td><td>${esc(p.kelas)}</td><td>${esc(p.maktab)}</td><td>${esc(p.homeroom)}</td><td class="n">${p.k.s}/${p.k.n}</td><td class="n">${p.k.ts}</td><td>${bar(p.k.pct)}</td></tr>`).join('')
+    || '<tr><td colspan="9">' + (q ? 'No. Maktab tidak dijumpai.' : 'Tiada pelajar sepadan.') + '</td></tr>';
+}
+['sTk','sKelas','sStatus','sSusun'].forEach(id => $(id).onchange = paparSemak);
+$('sCari').oninput = paparSemak;
+$('sBadan').onclick = e => { const tr = e.target.closest('tr.klik'); if (tr) bukaModal(SENARAI_S[+tr.dataset.i]); };
+$('sCsv').onclick = () => csv('semakan-tamhidi.csv',
+  [['BIL','NAMA','TINGKATAN','KELAS','NO.MAKTAB','HOMEROOM','SELESAI','JUMLAH','TIDAK SELESAI','PERATUS']]
+    .concat(SENARAI_S.map((p,i) => [i+1,p.nama,p.tk,p.kelas,p.maktab,p.homeroom,p.k.s,p.k.n,p.k.ts,p.k.pct+'%'])));
+
+/* ---------- Tab 2: Homeroom ---------- */
+function isiHomeroom(){ pilihan($('hHome'), unik(DATA[$('hTk').value].pelajar.map(p => p.homeroom))); }
+function paparHome(){
+  const tk = $('hTk').value, hm = $('hHome').value, d = DATA[tk];
+  const ps = d.pelajar.filter(p => p.homeroom === hm).sort((a,b) => a.nama.localeCompare(b.nama));
+  SENARAI_H = ps; const r = ringkas(ps);
+  $('hTajuk').textContent = (hm || 'Tiada homeroom') + ' · ' + tk;
+  $('hKpi').innerHTML = [[r.n,'Jumlah pelajar'],[r.purata+'%','Purata pencapaian'],[r.tamat,'Tamat semua surah'],[r.sedang,'Sedang berjalan'],[r.belum,'Belum ada rekod']]
+    .map(x => `<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');
+  $('hKepala').innerHTML = `<tr><th>Nama</th><th>Kelas</th>${d.surah.map(s => `<th class="s" title="${esc(s)}">${esc(s)}</th>`).join('')}<th class="n">Selesai</th><th>Pencapaian</th></tr>`;
+  $('hBadan').innerHTML = ps.map((p,i) =>
+    `<tr class="klik" data-i="${i}"><td>${esc(p.nama)}</td><td>${esc(p.kelas)}</td>${p.status.map(s => `<td class="s"><span class="lencana ${s||'X'}">${s||'–'}</span></td>`).join('')}<td class="n">${p.k.s}/${p.k.n}</td><td>${bar(p.k.pct)}</td></tr>`).join('')
+    || `<tr><td colspan="${d.surah.length + 4}">Tiada pelajar.</td></tr>`;
+}
+$('hTk').onchange = () => { isiHomeroom(); paparHome(); };
+$('hHome').onchange = paparHome;
+$('hBadan').onclick = e => { const tr = e.target.closest('tr.klik'); if (tr) bukaModal(SENARAI_H[+tr.dataset.i]); };
+$('hCsv').onclick = () => { const tk = $('hTk').value;
+  csv('homeroom-' + tk + '.csv', [['BIL','NAMA','KELAS','NO.MAKTAB','HOMEROOM',...DATA[tk].surah,'SELESAI','PERATUS']]
+    .concat(SENARAI_H.map((p,i) => [i+1,p.nama,p.kelas,p.maktab,p.homeroom,...p.status,p.k.s,p.k.pct+'%']))); };
+
+/* ---------- Tab 3: Analisa ---------- */
+function barisRingkas(label, arr){ const r = ringkas(arr);
+  return `<tr><td>${esc(label)}</td><td class="n">${r.n}</td><td class="n">${r.tamat}</td><td class="n">${r.sedang}</td><td class="n">${r.belum}</td><td class="n">${r.pTamat}%</td><td>${bar(r.purata)}</td></tr>`; }
+function paparAnalisa(){
+  const tk = $('aSkop').value, ps = tk ? DATA[tk].pelajar : SEMUA, r = ringkas(ps);
+  $('aKpi').innerHTML = [[r.n,'Jumlah pelajar'],[r.purata+'%','Purata pencapaian'],[r.pTamat+'%','Peratus tamat semua'],[r.tamat,'Tamat semua surah'],[r.belum,'Belum ada rekod']]
+    .map(x => `<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');
+  $('aPai1').innerHTML = pai([{l:'Tamat semua surah', v:r.tamat, w:WARNA.tamat},{l:'Sedang berjalan', v:r.sedang, w:WARNA.sedang},{l:'Belum ada rekod', v:r.belum, w:WARNA.belum}]);
+  const s = ps.reduce((a,p) => a + p.k.s, 0), ts = ps.reduce((a,p) => a + p.k.ts, 0), n = ps.reduce((a,p) => a + p.k.n, 0);
+  $('aPai2').innerHTML = pai([{l:'Selesai (S)', v:s, w:WARNA.tamat},{l:'Tidak selesai (TS)', v:ts, w:WARNA.ts},{l:'Belum direkod', v:n - s - ts, w:WARNA.belum}]);
+
+  $('aT1Tajuk').textContent = tk ? 'Pencapaian Mengikut Kelas (' + tk + ')' : 'Pencapaian Mengikut Tingkatan';
+  $('aT1Lajur').textContent = tk ? 'Kelas' : 'Tingkatan';
+  const g = kumpul(ps, p => tk ? (p.kelas || '(Tiada)') : p.tk);
+  $('aT1').innerHTML = [...g.keys()].sort().map(k => barisRingkas(k, g.get(k))).join('') + (g.size > 1 ? barisRingkas('JUMLAH', ps).replace('<tr>', '<tr style="font-weight:700">') : '');
+
+  $('aSurahKad').hidden = !tk;
+  if (tk) $('aSurah').innerHTML = DATA[tk].surah.map((nm,i) => {
+    const a = ps.filter(p => p.status[i] === 'S').length, b = ps.filter(p => p.status[i] === 'TS' || p.status[i] === 'STS').length;
+    return `<tr><td>${esc(nm)}</td><td class="n">${a}</td><td class="n">${b}</td><td class="n">${ps.length - a - b}</td><td>${bar(ps.length ? Math.round(a / ps.length * 100) : 0)}</td></tr>`; }).join('');
+
+  const h = kumpul(ps, p => p.tk + '|' + (p.homeroom || '(Tiada)'));
+  $('aHome').innerHTML = [...h.entries()].map(([k,arr]) => ({k, r:ringkas(arr)})).sort((a,b) => b.r.purata - a.r.purata || b.r.pTamat - a.r.pTamat)
+    .map((x,i) => { const [t,nm] = x.k.split('|');
+      return `<tr><td>${i+1}</td><td>${esc(nm)}</td><td>${t}</td><td class="n">${x.r.n}</td><td class="n">${x.r.tamat}</td><td class="n">${x.r.pTamat}%</td><td>${bar(x.r.purata)}</td></tr>`; }).join('');
+}
+$('aSkop').onchange = paparAnalisa;
+
+if (sesi.get()) muat();
+</script>
+</body>
+</html>
