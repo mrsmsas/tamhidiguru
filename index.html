@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard eTamhidi MRSM SAS</title>
+<title>eTamhidi MRSM SAS</title>
 <meta name="robots" content="noindex">
 <style>
 :root{--hijau:#0f5c4a;--hijau2:#17806a;--emas:#c79a3b;--bg:#f3f6f4;--kad:#fff;--teks:#1c2b27;--kabur:#66756f;--garis:#e1e8e4;--merah:#c0392b;--kelabu:#c5cfca}
@@ -14,6 +14,7 @@ header img{height:56px;display:block;margin:0 auto 8px}
 header h1{margin:0;font-size:1.3rem}
 header p{margin:4px 0 0;font-size:.85rem;opacity:.9}
 main{flex:1;width:100%;max-width:1180px;margin:-36px auto 0;padding:0 16px 32px}
+a{color:var(--hijau2)}
 .tab{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
 .tab button{border:0;padding:9px 20px;border-radius:999px;background:rgba(255,255,255,.88);color:var(--hijau);font-weight:600;cursor:pointer;font-size:.9rem;box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .tab button.aktif{background:var(--emas);color:#fff}
@@ -24,6 +25,7 @@ label{font-size:.8rem;font-weight:600;color:var(--kabur);display:block;margin-bo
 input,select{width:100%;padding:10px 12px;border:1px solid var(--garis);border-radius:9px;font-size:.95rem;background:#fff;color:var(--teks)}
 input:focus,select:focus{outline:2px solid var(--hijau2);outline-offset:1px}
 .btn{border:0;background:var(--hijau);color:#fff;padding:10px 18px;border-radius:9px;font-weight:600;font-size:.92rem;cursor:pointer}
+a.btn{text-decoration:none;display:inline-block}
 .btn:disabled{opacity:.6;cursor:wait}
 .btn.luar{background:#fff;color:var(--hijau);border:1px solid var(--hijau)}
 .btn.kecil{padding:7px 12px;font-size:.82rem}
@@ -66,19 +68,85 @@ tbody tr.klik{cursor:pointer}tbody tr.klik:hover{background:#f1f7f4}
 .senarai li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--garis);border-radius:9px;font-size:.86rem}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto;z-index:9}
 .modal .kad{max-width:760px;width:100%}
+
+/* ---------- Laman utama (welcoming) ---------- */
+.sambut{max-width:760px;margin:0 auto 16px;text-align:center}
+.sambut h2{font-size:1.25rem;margin:0 0 4px}
+.sambut p{margin:0}
+.pilih{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:760px;margin:0 auto}
+.pilih a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:var(--kad);border-radius:18px;padding:28px 20px 24px;text-decoration:none;color:var(--teks);box-shadow:0 2px 10px rgba(15,92,74,.08);border-top:4px solid var(--emas);transition:transform .15s,box-shadow .15s}
+.pilih a:hover,.pilih a:focus-visible{transform:translateY(-3px);box-shadow:0 8px 22px rgba(15,92,74,.16);outline:none}
+.ikon{width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,var(--hijau),var(--hijau2));display:grid;place-items:center;box-shadow:0 0 0 6px #e8f2ee}
+.ikon svg{width:38px;height:38px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pilih b{font-size:1.1rem;color:var(--hijau)}
+.pilih .masuk{margin-top:6px;background:var(--hijau);color:#fff;padding:8px 20px;border-radius:999px;font-weight:600;font-size:.86rem}
+
+/* ---------- Semakan pelajar ---------- */
+.lebar{max-width:760px;margin-left:auto;margin-right:auto}
+.pNama{font-size:1.15rem;margin:0 0 2px;color:var(--hijau)}
+.peratus{display:flex;align-items:center;gap:12px;margin:14px 0 4px}
+.peratus .trek{flex:1;height:12px;background:var(--garis);border-radius:99px;overflow:hidden}
+.peratus .trek i{display:block;height:100%;background:linear-gradient(90deg,var(--hijau2),var(--emas))}
+.peratus b{font-size:1.4rem;color:var(--hijau);min-width:56px;text-align:right}
+.statusBesar{display:inline-block;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:99px;margin-top:6px}
+.statusBesar.tamat{background:#e3f4ec;color:#0f6b4d}.statusBesar.sedang{background:#fdf2dc;color:#8a5a08}.statusBesar.belum{background:#eef1f0;color:var(--kabur)}
+.ulas{background:var(--bg);border-left:4px solid var(--emas);border-radius:9px;padding:10px 12px;margin-top:12px;font-size:.9rem}
+.ulas b{color:var(--hijau)}
+
 footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
 [hidden]{display:none!important}
-@media print{header,.tab,.tapis,.btn,footer,#bar{display:none!important}main{margin:0;max-width:none}.kad{box-shadow:none}}
+@media print{header,.tab,.tapis,.btn,footer,#bar,#kUtama,.tiadaCetak{display:none!important}main{margin:0;max-width:none}.kad{box-shadow:none}}
 </style>
 </head>
 <body>
 <header>
   <img id="logo" alt="Logo MRSM SAS" hidden>
-  <h1>Dashboard eTamhidi</h1>
-  <p>Analisa Tamhidi Hafazan &middot; Guru / Admin &middot; MRSM Sultan Azlan Shah</p>
+  <h1 id="tajuk">eTamhidi MRSM SAS</h1>
+  <p id="subTajuk">Tamhidi Hafazan &middot; MRSM Sultan Azlan Shah</p>
 </header>
 
 <main>
+  <!-- LAMAN UTAMA -->
+  <section id="kUtama">
+    <div class="kad sambut">
+      <h2>Selamat Datang ke eTamhidi</h2>
+      <p class="nota">Sistem Semakan Keputusan Tamhidi Hafazan. Sila pilih akses anda.</p>
+    </div>
+    <div class="pilih">
+      <a href="#pelajar">
+        <span class="ikon"><svg viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
+        <b>Semakan Pelajar</b>
+        <span class="nota">Semak keputusan bacaan surah menggunakan No. Maktab.</span>
+        <span class="masuk">Semak Keputusan</span>
+      </a>
+      <a href="#guru">
+        <span class="ikon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx=".5"/><rect x="12" y="8" width="3" height="10" rx=".5"/><rect x="17" y="5" width="3" height="13" rx=".5"/></svg></span>
+        <b>Guru / Admin</b>
+        <span class="nota">Dashboard semakan, homeroom dan analisa pencapaian.</span>
+        <span class="masuk">Log Masuk</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SEMAKAN PELAJAR -->
+  <section id="kPelajar" hidden>
+    <div class="kad sempit tiadaCetak">
+      <h2>Semakan Keputusan Pelajar</h2>
+      <form id="fSemak">
+        <label for="pMaktab">No. Maktab</label>
+        <div class="baris">
+          <input id="pMaktab" placeholder="Contoh: AK261124" autocomplete="off" autocapitalize="characters" maxlength="12" required>
+          <button class="btn" id="bSemak">Semak</button>
+        </div>
+      </form>
+      <div id="ralatSemak" class="ralat" hidden></div>
+      <p class="nota" style="margin:14px 0 0;text-align:center"><a href="#">&larr; Kembali ke laman utama</a></p>
+    </div>
+    <div id="pHasil" class="kad lebar" hidden></div>
+  </section>
+
+  <!-- GURU / ADMIN -->
+  <section id="kGuru" hidden>
   <div id="kLogin" class="kad sempit">
     <h2>Log Masuk Guru / Admin</h2>
     <form id="fLogin">
@@ -89,6 +157,7 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
       </div>
     </form>
     <div id="ralatLogin" class="ralat" hidden></div>
+    <p class="nota" style="margin:14px 0 0;text-align:center"><a href="#">&larr; Kembali ke laman utama</a></p>
   </div>
 
   <div id="kDash" hidden>
@@ -100,6 +169,7 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
     <div class="atas" id="bar">
       <span class="nota" id="masa"></span>
       <span>
+        <a class="btn luar kecil" href="#">Laman Utama</a>
         <button class="btn luar kecil" id="bSegar">Muat Semula</button>
         <button class="btn luar kecil" id="bCetak">Cetak</button>
         <button class="btn luar kecil" id="bKeluar">Log Keluar</button>
@@ -160,6 +230,7 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
       <div class="kad"><h2>Kedudukan Homeroom</h2><div class="jadual"><table><thead><tr><th>Bil</th><th>Homeroom</th><th>Tkt</th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">% Tamat</th><th>Purata Pencapaian</th></tr></thead><tbody id="aHome"></tbody></table></div></div>
     </section>
   </div>
+  </section>
 </main>
 
 <div class="modal" id="modal" hidden><div class="kad"><div class="atas"><h2 style="margin:0">Perincian Pelajar</h2><button class="btn luar kecil" id="bTutup">Tutup</button></div><div id="isiModal"></div></div></div>
@@ -168,7 +239,7 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
 
 <script>
 /* ================== TETAPAN ================== */
-const API_URL  = 'https://script.google.com/macros/s/AKfycbwREoGJ-BrkVD5X8VNdA91OLRPOdNru88zCkmjkkDjABlFFqRdFWJD5I1sI4rTwZx7iUA/exec';   // https://script.google.com/macros/s/XXXX/exec
+const API_URL  = 'https://script.google.com/macros/s/AKfycbwREoGJ-BrkVD5X8VNdA91OLRPOdNru88zCkmjkkDjABlFFqRdFWJD5I1sI4rTwZx7iUA/exec';   // API (guru + pelajar)
 const LOGO_URL = 'logo.png';                                      // cth: 'logo.png' (letak fail dalam repo yang sama)
 /* ============================================= */
 
@@ -183,6 +254,26 @@ const sesi = {
 let DATA = null, SEMUA = [], SENARAI_S = [], SENARAI_H = [];
 
 if (LOGO_URL) { $('logo').src = LOGO_URL; $('logo').hidden = false; }
+
+/* ---------- Navigasi: #  |  #pelajar  |  #guru ---------- */
+const PAPARAN = {
+  utama:   ['eTamhidi MRSM SAS', 'Tamhidi Hafazan · MRSM Sultan Azlan Shah'],
+  pelajar: ['Semakan Keputusan Pelajar', 'Tamhidi Hafazan · MRSM Sultan Azlan Shah'],
+  guru:    ['Dashboard eTamhidi', 'Analisa Tamhidi Hafazan · Guru / Admin · MRSM Sultan Azlan Shah']
+};
+function laluan(){ const h = location.hash.slice(1).toLowerCase(); return PAPARAN[h] ? h : 'utama'; }
+function papar(){
+  const v = laluan();
+  $('kUtama').hidden = v !== 'utama';
+  $('kPelajar').hidden = v !== 'pelajar';
+  $('kGuru').hidden = v !== 'guru';
+  $('tajuk').textContent = PAPARAN[v][0]; $('subTajuk').textContent = PAPARAN[v][1];
+  document.title = PAPARAN[v][0] + ' · MRSM SAS';
+  if (v === 'guru' && !DATA) setTimeout(() => $('pw').focus(), 50);
+  if (v === 'pelajar' && $('pHasil').hidden) setTimeout(() => $('pMaktab').focus(), 50);
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', papar);
 
 async function api(isi) {
   if (!/^https:\/\/script\.google\.com\//.test(API_URL)) throw new Error('API_URL belum ditetapkan dalam index.html.');
@@ -229,9 +320,48 @@ function kadPelajar(p){
 function bukaModal(p){ if (!p) return; $('isiModal').innerHTML = kadPelajar(p); $('modal').hidden = false; }
 function csv(nama, baris){
   const sel = x => '"' + String(x).replace(/"/g,'""') + '"', a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob(['﻿' + baris.map(r => r.map(sel).join(',')).join('\r\n')], {type:'text/csv;charset=utf-8'}));
+  a.href = URL.createObjectURL(new Blob(['\ufeff' + baris.map(r => r.map(sel).join(',')).join('\r\n')], {type:'text/csv;charset=utf-8'}));
   a.download = nama; a.click(); URL.revokeObjectURL(a.href);
 }
+
+/* ---------- Semakan pelajar (awam, tanpa log masuk) ---------- */
+const ST_LABEL = {tamat:'Tamat semua surah', sedang:'Sedang berjalan', belum:'Belum ada rekod'};
+function kadSemak(d){
+  const p = d.pelajar; p.tk = d.tk; const k = kira(p);
+  return `<p class="nota" style="margin:0">Keputusan Tamhidi Hafazan</p>
+    <h3 class="pNama">${esc(p.nama)}</h3>
+    <span class="statusBesar ${k.st}">${ST_LABEL[k.st]}</span>
+    <div class="info">
+      <div><small>Tingkatan</small><b>${esc(d.tk)}</b></div><div><small>Kelas</small><b>${esc(p.kelas)}</b></div>
+      <div><small>No. Maktab</small><b>${esc(p.maktab)}</b></div><div><small>Homeroom</small><b>${esc(p.homeroom)}</b></div>
+    </div>
+    <div class="peratus"><span class="trek"><i style="width:${k.pct}%"></i></span><b>${k.pct}%</b></div>
+    <p class="nota" style="margin:0">${k.s} daripada ${k.n} surah selesai${k.ts ? ' · ' + k.ts + ' tidak selesai' : ''}</p>
+    <ul class="senarai">${d.surah.map((s,i) => `<li><span>${esc(s)}</span><span class="lencana ${p.status[i]||'X'}">${LABEL[p.status[i]||'']}</span></li>`).join('')}</ul>
+    ${p.catatan ? `<div class="ulas"><b>Catatan:</b> ${esc(p.catatan)}</div>` : ''}${p.ulasan ? `<div class="ulas"><b>Ulasan guru:</b> ${esc(p.ulasan)}</div>` : ''}
+    ${d.dikemaskini ? `<p class="nota" style="margin:12px 0 0">Data setakat ${esc(new Date(d.dikemaskini).toLocaleString('ms-MY'))}</p>` : ''}
+    <div class="atas tiadaCetak" style="margin:14px 0 0;justify-content:flex-end">
+      <button class="btn luar kecil" onclick="window.print()">Cetak</button>
+      <button class="btn kecil" id="bSemakLain">Semak No. Maktab lain</button>
+    </div>`;
+}
+$('fSemak').onsubmit = async e => {
+  e.preventDefault();
+  const q = $('pMaktab').value.toUpperCase().replace(/[^A-Z0-9]/g, ''), b = $('bSemak');
+  ralat($('ralatSemak')); $('pHasil').hidden = true;
+  if (q.length < 4) return ralat($('ralatSemak'), 'Sila masukkan No. Maktab yang sah.');
+  b.disabled = true; b.textContent = 'Menyemak...';
+  try {
+    const d = await api({action:'semak', maktab:q});
+    if (!d.ok) ralat($('ralatSemak'), d.mesej || 'No. Maktab tidak dijumpai.');
+    else {
+      $('pHasil').innerHTML = kadSemak(d); $('pHasil').hidden = false;
+      $('bSemakLain').onclick = () => { $('pHasil').hidden = true; $('pMaktab').value = ''; $('pMaktab').focus(); };
+      $('pHasil').scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  } catch(err){ ralat($('ralatSemak'), err.message); }
+  b.disabled = false; b.textContent = 'Semak';
+};
 
 /* ---------- Log masuk & data ---------- */
 $('fLogin').onsubmit = async e => {
@@ -344,6 +474,7 @@ function paparAnalisa(){
 }
 $('aSkop').onchange = paparAnalisa;
 
+papar();
 if (sesi.get()) muat();
 </script>
 </body>
