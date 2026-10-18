@@ -3,40 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>eTamhidi MRSM SAS</title>
-<meta name="robots" content="noindex">
+<title>eTamhidi MRSM Sultan Azlan Shah</title>
+<meta name="description" content="Laman rasmi eTamhidi MRSM Sultan Azlan Shah — semakan keputusan hafazan Program Tamhidi Ulul Albab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--hijau:#0f5c4a;--hijau2:#17806a;--emas:#c79a3b;--bg:#f3f6f4;--kad:#fff;--teks:#1c2b27;--kabur:#66756f;--garis:#e1e8e4;--merah:#c0392b;--kelabu:#c5cfca}
+:root{
+  --tinta:#0c3a2e;        /* hijau mushaf */
+  --hijau:#14533f; --hijau2:#1f6e56;
+  --emas:#b8913a; --emas2:#d8b765;
+  --kertas:#f1f4f0; --kad:#fff;
+  --teks:#16231e; --kabur:#5d6c66; --garis:#dde5e0;
+  --merah:#b23a2e; --kelabu:#c9d2cd;
+  --lebar:1160px;
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--teks);line-height:1.45;min-height:100vh;display:flex;flex-direction:column}
-header{background:linear-gradient(135deg,var(--hijau),var(--hijau2));color:#fff;text-align:center;padding:18px 16px 54px;border-bottom:3px solid var(--emas)}
-header img{height:56px;display:block;margin:0 auto 8px}
-header h1{margin:0;font-size:1.3rem}
-header p{margin:4px 0 0;font-size:.85rem;opacity:.9}
-main{flex:1;width:100%;max-width:1180px;margin:-36px auto 0;padding:0 16px 32px}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:"Lexend",system-ui,sans-serif;font-weight:300;background:var(--kertas);color:var(--teks);line-height:1.6;font-size:16px}
+h1,h2,h3{font-weight:600;line-height:1.2;letter-spacing:-.01em}
 a{color:var(--hijau2)}
+img{max-width:100%}
+.bekas{max-width:var(--lebar);margin:0 auto;padding:0 20px}
+:focus-visible{outline:2px solid var(--emas);outline-offset:2px}
+.ar{font-family:"Amiri",serif;direction:rtl}
+
+/* ---------- Navigasi ---------- */
+.nav{position:sticky;top:0;z-index:20;background:var(--tinta);color:#fff;border-bottom:1px solid rgba(216,183,101,.35)}
+.nav .bekas{display:flex;align-items:center;gap:18px;height:64px}
+.jenama{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;margin-right:auto}
+.jenama img{height:44px;width:auto;max-width:60px;object-fit:contain}
+.jenama .bintangKecil{width:34px;height:34px}
+.jenama b{display:block;font-weight:600;font-size:1rem;line-height:1.1}
+.jenama small{display:block;font-size:.72rem;opacity:.75;line-height:1.2}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a{color:#e4ece8;text-decoration:none;font-size:.88rem;padding:8px 11px;border-radius:8px}
+.menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.menu .butang{margin-left:6px}
+.butang{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:500;font-size:.9rem;text-decoration:none;border-radius:10px;padding:10px 18px;background:var(--emas);color:#14110a;transition:background .15s}
+.butang:hover{background:var(--emas2)}
+.butang.garis{background:transparent;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
+.butang.garis:hover{background:rgba(255,255,255,.08)}
+.menu a.butang{color:#14110a;padding:9px 16px}
+.menu a.butang.garis{color:#fff}
+.burger{display:none;background:none;border:0;color:#fff;padding:8px;cursor:pointer}
+.burger svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2}
+@media (max-width:900px){
+  .burger{display:block}
+  .menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--tinta);flex-direction:column;align-items:stretch;padding:8px 16px 16px;border-bottom:1px solid rgba(216,183,101,.35)}
+  .menu.buka{display:flex}
+  .menu a{padding:12px}
+  .menu .butang{margin:6px 0 0}
+}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--tinta);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23d8b765' stroke-width='1'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E")}
+.hero .bekas{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-top:64px;padding-bottom:72px}
+.kunci{display:flex;align-items:center;gap:14px;margin:0 0 26px;font-size:.85rem;color:#c9d6d0;line-height:1.35}
+.kunci img{height:68px;width:auto;max-width:90px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.kunci b{color:#fff;font-weight:500}
+.kunci img[hidden]+span{display:none}
+.hadis{margin:0 0 22px;color:var(--emas2)}
+.hadis .ar{font-size:1.7rem;line-height:1.6;display:block;text-align:left}
+.hadis small{display:block;font-size:.8rem;color:#c9d6d0;margin-top:2px}
+.hero h1{font-size:clamp(2rem,4.4vw,3.15rem);margin:0 0 16px;max-width:15ch}
+.hero p.lede{font-size:1.06rem;color:#d3dfda;max-width:46ch;margin:0 0 28px}
+.semakPantas{background:#fff;border-radius:14px;padding:6px;display:flex;gap:6px;max-width:460px;box-shadow:0 0 0 4px rgba(216,183,101,.25)}
+.semakPantas input{flex:1;border:0;font:inherit;font-weight:400;font-size:1rem;padding:12px 14px;border-radius:10px;color:var(--teks);min-width:0;text-transform:uppercase}
+.semakPantas input::placeholder{text-transform:none;color:#8a9893}
+.semakPantas input:focus{outline:none}
+.semakPantas .butang{background:var(--tinta);color:#fff}
+.semakPantas .butang:hover{background:var(--hijau)}
+.heroNota{font-size:.82rem;color:#a9bdb5;margin:12px 0 0}
+.heroNota a{color:var(--emas2)}
+
+.bintang{position:relative;width:min(400px,100%);margin:0 auto;aspect-ratio:1}
+.bintang svg{width:100%;height:100%;display:block}
+.bintang .garisEmas{fill:none;stroke:var(--emas2);stroke-width:1.4}
+.bintang .lukis{stroke-dasharray:1000;stroke-dashoffset:1000;animation:lukis 2.2s cubic-bezier(.6,.1,.2,1) .2s forwards}
+@keyframes lukis{to{stroke-dashoffset:0}}
+.bintang .cincin text{fill:var(--emas2);font-size:9.2px;letter-spacing:.14em;font-family:Lexend,sans-serif}
+.bintang .tengah{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.bintang .tengah b{font-size:clamp(2.6rem,6vw,3.6rem);font-weight:600;line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.bintang .tengah span{font-size:.85rem;color:#c9d6d0;max-width:16ch;margin-top:6px;line-height:1.35}
+@media (prefers-reduced-motion:reduce){.bintang .lukis{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+@media (max-width:860px){.hero .bekas{grid-template-columns:1fr;padding-top:44px;gap:28px}.bintang{width:min(300px,82%)}}
+
+/* ---------- Bahagian umum ---------- */
+.bhg{padding:76px 0}
+.bhg h2{font-size:clamp(1.5rem,2.8vw,2.05rem);margin:0 0 10px;color:var(--tinta)}
+.bhg .pengenalan{color:var(--kabur);max-width:58ch;margin:0 0 36px}
+.contohLencana{display:inline-block;font-size:.75rem;font-weight:500;background:#fdf3dc;color:#7a5a12;padding:3px 10px;border-radius:99px;margin-left:8px;vertical-align:middle}
+
+/* Statistik */
+.statRingkas{display:flex;flex-wrap:wrap;gap:10px 36px;margin:0 0 28px;padding:0;list-style:none}
+.statRingkas li{color:var(--kabur);font-size:.92rem}
+.statRingkas b{display:block;font-size:1.7rem;font-weight:600;color:var(--tinta);font-variant-numeric:tabular-nums}
+.papan{background:var(--kad);border-radius:16px;padding:8px 24px;border:1px solid var(--garis)}
+.tkBaris{display:grid;grid-template-columns:110px 1fr 64px;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--garis)}
+.tkBaris:last-child{border-bottom:0}
+.tkBaris .nm{font-weight:500}
+.tkBaris .nm small{display:block;color:var(--kabur);font-weight:300;font-size:.78rem}
+.tkBar{display:flex;height:14px;border-radius:99px;overflow:hidden;background:var(--garis)}
+.tkBar i{display:block;height:100%}
+.tkBar .t{background:var(--hijau2)}.tkBar .s{background:var(--emas)}.tkBar .b{background:var(--kelabu)}
+.tkBaris .pc{text-align:right;font-weight:600;color:var(--tinta);font-variant-numeric:tabular-nums}
+.petunjuk{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0;font-size:.84rem;color:var(--kabur)}
+.petunjuk span{display:inline-flex;align-items:center;gap:7px}
+.petunjuk i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.statNota{font-size:.8rem;color:var(--kabur);margin:12px 0 0}
+@media (max-width:560px){.tkBaris{grid-template-columns:1fr 54px}.tkBar{grid-column:1/-1;order:3}}
+
+/* Tentang */
+.tentang{background:var(--kad)}
+.tentang .bekas{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px}
+.ciri{list-style:none;margin:0;padding:0}
+.ciri li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:22px 0;border-top:1px solid var(--garis)}
+.ciri li:first-child{border-top:0;padding-top:4px}
+.ciri svg{width:30px;height:30px;stroke:var(--hijau2);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ciri h3{margin:2px 0 4px;font-size:1.05rem;color:var(--tinta)}
+.ciri p{margin:0;color:var(--kabur)}
+@media (max-width:860px){.tentang .bekas{grid-template-columns:1fr;gap:20px}}
+
+/* Langkah semakan (urutan) */
+.langkah{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:l}
+.langkah li{counter-increment:l;position:relative;padding:24px 22px 22px;border-radius:14px;background:var(--kad);border:1px solid var(--garis)}
+.langkah li::before{content:counter(l);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--tinta);color:var(--emas2);font-weight:600;margin-bottom:14px}
+.langkah h3{margin:0 0 4px;font-size:1rem;color:var(--tinta)}
+.langkah p{margin:0;color:var(--kabur);font-size:.93rem}
+.langkahCta{margin-top:24px}
+.langkahCta .butang{background:var(--tinta);color:#fff}
+.langkahCta .butang:hover{background:var(--hijau)}
+@media (max-width:760px){.langkah{grid-template-columns:1fr}}
+
+/* Visi, misi & objektif — bingkai mushaf */
+.mushaf{background:var(--tinta);color:#e7efeb}
+.bingkai{border:1px solid var(--emas);padding:6px;border-radius:4px}
+.bingkai>div{border:3px double var(--emas);border-radius:2px;padding:clamp(24px,5vw,56px)}
+.mushaf h2{color:#fff}
+.visi{font-size:clamp(1.2rem,2.2vw,1.55rem);font-weight:400;line-height:1.5;color:#fff;max-width:44ch;margin:0 0 40px}
+.duaLajur{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.mushaf h3{color:var(--emas2);font-size:1.05rem;margin:0 0 12px}
+.mushaf ol{margin:0;padding-left:1.3em}
+.mushaf li{margin-bottom:10px;color:#cfdcd6}
+.mushaf li::marker{color:var(--emas2);font-weight:600}
+@media (max-width:760px){.duaLajur{grid-template-columns:1fr;gap:28px}}
+
+/* Organisasi */
+.carta{display:flex;flex-direction:column;align-items:center;gap:0}
+.aras{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;position:relative;padding-top:26px}
+.aras:first-child{padding-top:0}
+.aras:not(:first-child)::before{content:"";position:absolute;top:0;left:50%;height:26px;border-left:1px solid var(--emas)}
+.org{background:var(--kad);border:1px solid var(--garis);border-top:3px solid var(--emas);border-radius:10px;padding:12px 18px;min-width:200px;text-align:center}
+.org small{display:block;color:var(--kabur);font-size:.78rem}
+.org b{display:block;font-weight:500;color:var(--tinta)}
+.org b.kosong{color:#9aa7a2;font-weight:300;font-style:italic}
+.arasLabel{width:100%;text-align:center;font-size:.8rem;color:var(--emas);font-weight:500;margin-bottom:-4px}
+
+/* Hubungi */
+.hubungi .bekas{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:stretch}
+.alamat{font-style:normal}
+.alamat dl{margin:0}
+.alamat dt{font-size:.82rem;color:var(--kabur);margin-top:18px}
+.alamat dd{margin:2px 0 0;font-weight:400}
+.peta{border-radius:16px;overflow:hidden;border:1px solid var(--garis);min-height:300px;background:var(--garis)}
+.peta iframe{display:block;width:100%;height:100%;min-height:300px;border:0}
+@media (max-width:860px){.hubungi .bekas{grid-template-columns:1fr}}
+
+footer.kaki{background:var(--tinta);color:#a9bdb5;font-size:.82rem;padding:28px 0}
+footer.kaki .bekas{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+.kakiJenama{display:inline-flex;align-items:center;gap:10px}
+.kakiJenama img{height:30px;width:auto}
+
+/* ---------- Halaman pelajar / guru ---------- */
+.jalur{background:var(--tinta);color:#fff;padding:34px 0 64px}
+.jalur h1{margin:0;font-size:clamp(1.4rem,3vw,1.9rem)}
+.jalur p{margin:6px 0 0;color:#c9d6d0;font-size:.92rem}
+.kandungan{max-width:var(--lebar);margin:-40px auto 0;padding:0 20px 48px}
+
+/* ---- Komponen dashboard (dikekalkan) ---- */
 .tab{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-.tab button{border:0;padding:9px 20px;border-radius:999px;background:rgba(255,255,255,.88);color:var(--hijau);font-weight:600;cursor:pointer;font-size:.9rem;box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.tab button.aktif{background:var(--emas);color:#fff}
-.kad{background:var(--kad);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(15,92,74,.08);margin-bottom:16px}
+.tab button{border:0;padding:9px 20px;border-radius:999px;background:#fff;color:var(--hijau);font:inherit;font-weight:500;cursor:pointer;font-size:.9rem;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.tab button.aktif{background:var(--emas);color:#14110a}
+.kad{background:var(--kad);border-radius:14px;padding:20px;box-shadow:0 2px 12px rgba(12,58,46,.07);margin-bottom:16px}
 .sempit{max-width:480px;margin-left:auto;margin-right:auto}
-h2{font-size:1.02rem;margin:0 0 12px;color:var(--hijau)}
-label{font-size:.8rem;font-weight:600;color:var(--kabur);display:block;margin-bottom:4px}
-input,select{width:100%;padding:10px 12px;border:1px solid var(--garis);border-radius:9px;font-size:.95rem;background:#fff;color:var(--teks)}
+.lebarSdg{max-width:760px;margin-left:auto;margin-right:auto}
+.kad h2,.kandungan h2{font-size:1.02rem;margin:0 0 12px;color:var(--hijau)}
+label{font-size:.8rem;font-weight:500;color:var(--kabur);display:block;margin-bottom:4px}
+input,select{width:100%;padding:10px 12px;border:1px solid var(--garis);border-radius:9px;font:inherit;font-weight:400;font-size:.95rem;background:#fff;color:var(--teks)}
 input:focus,select:focus{outline:2px solid var(--hijau2);outline-offset:1px}
-.btn{border:0;background:var(--hijau);color:#fff;padding:10px 18px;border-radius:9px;font-weight:600;font-size:.92rem;cursor:pointer}
+.btn{border:0;background:var(--hijau);color:#fff;padding:10px 18px;border-radius:9px;font:inherit;font-weight:500;font-size:.92rem;cursor:pointer}
 a.btn{text-decoration:none;display:inline-block}
 .btn:disabled{opacity:.6;cursor:wait}
 .btn.luar{background:#fff;color:var(--hijau);border:1px solid var(--hijau)}
 .btn.kecil{padding:7px 12px;font-size:.82rem}
-.baris{display:flex;gap:8px}.baris>input{flex:1}
-.ralat{background:#fdecea;color:var(--merah);padding:10px 12px;border-radius:9px;font-size:.9rem;margin-top:12px}
+.baris{display:flex;gap:8px}.baris>input{flex:1;text-transform:uppercase}
+.baris>input[type=password]{text-transform:none}
+.ralat{background:#fbeceb;color:var(--merah);padding:10px 12px;border-radius:9px;font-size:.9rem;margin-top:12px}
 .nota{color:var(--kabur);font-size:.82rem}
 .atas{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
 .tapis{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
 .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px}
-.kpi div{background:var(--kad);border-radius:14px;padding:14px;box-shadow:0 2px 10px rgba(15,92,74,.08);border-left:4px solid var(--emas)}
-.kpi b{display:block;font-size:1.55rem;color:var(--hijau)}
+.kpi div{background:var(--kad);border-radius:14px;padding:14px;box-shadow:0 2px 12px rgba(12,58,46,.07);border-left:4px solid var(--emas)}
+.kpi b{display:block;font-size:1.55rem;font-weight:600;color:var(--hijau)}
 .kpi small{color:var(--kabur);font-size:.8rem}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:16px}
 .grid2 .kad{margin:0}
@@ -50,88 +220,209 @@ a.btn{text-decoration:none;display:inline-block}
 .jadual{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:.85rem}
 th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--garis);white-space:nowrap}
-th{color:var(--kabur);font-size:.72rem;text-transform:uppercase;letter-spacing:.3px;background:#f8faf9}
+th{color:var(--kabur);font-size:.74rem;font-weight:500;background:#f6f8f7}
 td.n,th.n{text-align:right}
-tbody tr.klik{cursor:pointer}tbody tr.klik:hover{background:#f1f7f4}
+tbody tr.klik{cursor:pointer}tbody tr.klik:hover{background:#f0f6f3}
 .bar{height:9px;width:80px;background:var(--garis);border-radius:99px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:6px}
 .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--hijau2),var(--emas))}
 .matriks th.s{max-width:74px;overflow:hidden;text-overflow:ellipsis;text-align:center;padding:7px 4px}
 .matriks td.s{text-align:center;padding:5px 4px}
 .matriks td:first-child,.matriks th:first-child{position:sticky;left:0;background:#fff;z-index:1}
-.matriks th:first-child{background:#f8faf9}
-.lencana{font-size:.7rem;font-weight:700;padding:2px 7px;border-radius:99px;white-space:nowrap;display:inline-block}
-.S{background:#e3f4ec;color:#0f6b4d}.TS{background:#fdecea;color:var(--merah)}.STS{background:#fdf2dc;color:#8a5a08}.X{background:#eef1f0;color:var(--kabur)}
+.matriks th:first-child{background:#f6f8f7}
+.lencana{font-size:.7rem;font-weight:600;padding:2px 7px;border-radius:99px;white-space:nowrap;display:inline-block}
+.S{background:#e2f2ea;color:#0f6b4d}.TS{background:#fbeceb;color:var(--merah)}.STS{background:#fdf2dc;color:#8a5a08}.X{background:#eef1f0;color:var(--kabur)}
 .info{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
-.info div{background:var(--bg);border-radius:9px;padding:8px 10px}
-.info small{display:block;color:var(--kabur);font-size:.72rem;text-transform:uppercase}
+.info div{background:var(--kertas);border-radius:9px;padding:8px 10px}
+.info small{display:block;color:var(--kabur);font-size:.74rem}
+.info b{font-weight:500}
 .senarai{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px}
 .senarai li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 10px;border:1px solid var(--garis);border-radius:9px;font-size:.86rem}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto;z-index:9}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:flex-start;justify-content:center;padding:24px 12px;overflow:auto;z-index:30}
 .modal .kad{max-width:760px;width:100%}
-
-/* ---------- Laman utama (welcoming) ---------- */
-.sambut{max-width:760px;margin:0 auto 16px;text-align:center}
-.sambut h2{font-size:1.25rem;margin:0 0 4px}
-.sambut p{margin:0}
-.pilih{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;max-width:760px;margin:0 auto}
-.pilih a{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:var(--kad);border-radius:18px;padding:28px 20px 24px;text-decoration:none;color:var(--teks);box-shadow:0 2px 10px rgba(15,92,74,.08);border-top:4px solid var(--emas);transition:transform .15s,box-shadow .15s}
-.pilih a:hover,.pilih a:focus-visible{transform:translateY(-3px);box-shadow:0 8px 22px rgba(15,92,74,.16);outline:none}
-.ikon{width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,var(--hijau),var(--hijau2));display:grid;place-items:center;box-shadow:0 0 0 6px #e8f2ee}
-.ikon svg{width:38px;height:38px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.pilih b{font-size:1.1rem;color:var(--hijau)}
-.pilih .masuk{margin-top:6px;background:var(--hijau);color:#fff;padding:8px 20px;border-radius:999px;font-weight:600;font-size:.86rem}
-
-/* ---------- Semakan pelajar ---------- */
-.lebar{max-width:760px;margin-left:auto;margin-right:auto}
-.pNama{font-size:1.15rem;margin:0 0 2px;color:var(--hijau)}
+/* Kad keputusan pelajar */
+.pNama{font-size:1.2rem;margin:0 0 2px;color:var(--tinta)}
 .peratus{display:flex;align-items:center;gap:12px;margin:14px 0 4px}
 .peratus .trek{flex:1;height:12px;background:var(--garis);border-radius:99px;overflow:hidden}
 .peratus .trek i{display:block;height:100%;background:linear-gradient(90deg,var(--hijau2),var(--emas))}
-.peratus b{font-size:1.4rem;color:var(--hijau);min-width:56px;text-align:right}
-.statusBesar{display:inline-block;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:99px;margin-top:6px}
-.statusBesar.tamat{background:#e3f4ec;color:#0f6b4d}.statusBesar.sedang{background:#fdf2dc;color:#8a5a08}.statusBesar.belum{background:#eef1f0;color:var(--kabur)}
-.ulas{background:var(--bg);border-left:4px solid var(--emas);border-radius:9px;padding:10px 12px;margin-top:12px;font-size:.9rem}
-.ulas b{color:var(--hijau)}
+.peratus b{font-size:1.4rem;font-weight:600;color:var(--tinta);min-width:56px;text-align:right}
+.statusBesar{display:inline-block;font-weight:500;font-size:.8rem;padding:4px 12px;border-radius:99px;margin-top:6px}
+.statusBesar.tamat{background:#e2f2ea;color:#0f6b4d}.statusBesar.sedang{background:#fdf2dc;color:#8a5a08}.statusBesar.belum{background:#eef1f0;color:var(--kabur)}
+.kepalaCetak{display:none;align-items:center;gap:12px;padding-bottom:12px;margin-bottom:14px;border-bottom:2px solid var(--emas)}
+.kepalaCetak img{height:56px;width:auto}
+.kepalaCetak span{font-weight:500;color:var(--tinta);line-height:1.3}
+.kepalaCetak small{font-weight:300;color:var(--kabur)}
+@media print{.kepalaCetak{display:flex}}
+.ulas{background:var(--kertas);border-left:4px solid var(--emas);border-radius:9px;padding:10px 12px;margin-top:12px;font-size:.9rem}
+.ulas b{color:var(--hijau);font-weight:500}
 
-footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
 [hidden]{display:none!important}
-@media print{header,.tab,.tapis,.btn,footer,#bar,#kUtama,.tiadaCetak{display:none!important}main{margin:0;max-width:none}.kad{box-shadow:none}}
+@media print{.nav,.jalur,.tab,.tapis,.btn,footer,#bar,.tiadaCetak{display:none!important}.kandungan{margin:0;max-width:none}.kad{box-shadow:none}}
 </style>
 </head>
 <body>
-<header>
-  <img id="logo" alt="Logo MRSM SAS" hidden>
-  <h1 id="tajuk">eTamhidi MRSM SAS</h1>
-  <p id="subTajuk">Tamhidi Hafazan &middot; MRSM Sultan Azlan Shah</p>
-</header>
 
-<main>
-  <!-- LAMAN UTAMA -->
-  <section id="kUtama">
-    <div class="kad sambut">
-      <h2>Selamat Datang ke eTamhidi</h2>
-      <p class="nota">Sistem Semakan Keputusan Tamhidi Hafazan. Sila pilih akses anda.</p>
+<nav class="nav" aria-label="Navigasi utama">
+  <div class="bekas">
+    <a class="jenama" href="#">
+      <img class="logoMrsm" alt="Logo MRSM Sultan Azlan Shah" hidden>
+      <svg id="logoGanti" class="bintangKecil" viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#d8b765" stroke-width="1.6"><rect x="9" y="9" width="22" height="22"/><rect x="9" y="9" width="22" height="22" transform="rotate(45 20 20)"/><circle cx="20" cy="20" r="4.5"/></g></svg>
+      <span><b>eTamhidi</b><small>MRSM Sultan Azlan Shah</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <div class="menu" id="menu">
+      <a href="#tentang">Tentang</a>
+      <a href="#statistik">Pencapaian</a>
+      <a href="#visi">Visi &amp; Misi</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#hubungi">Hubungi</a>
+      <a class="butang garis" href="#guru">Log masuk guru</a>
+      <a class="butang" href="#pelajar">Semak keputusan</a>
     </div>
-    <div class="pilih">
-      <a href="#pelajar">
-        <span class="ikon"><svg viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg></span>
-        <b>Semakan Pelajar</b>
-        <span class="nota">Semak keputusan bacaan surah menggunakan No. Maktab.</span>
-        <span class="masuk">Semak Keputusan</span>
-      </a>
-      <a href="#guru">
-        <span class="ikon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6" rx=".5"/><rect x="12" y="8" width="3" height="10" rx=".5"/><rect x="17" y="5" width="3" height="13" rx=".5"/></svg></span>
-        <b>Guru / Admin</b>
-        <span class="nota">Dashboard semakan, homeroom dan analisa pencapaian.</span>
-        <span class="masuk">Log Masuk</span>
-      </a>
+  </div>
+</nav>
+
+<!-- ===================== LAMAN UTAMA ===================== -->
+<div id="vUtama">
+  <header class="hero">
+    <div class="bekas">
+      <div>
+        <div class="kunci"><img class="logoMrsm" alt="" hidden><span>Maktab Rendah Sains MARA<br><b>Sultan Azlan Shah, Kuala Kangsar</b></span></div>
+        <p class="hadis"><span class="ar" lang="ar">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</span>
+          <small>Sebaik-baik kamu ialah orang yang mempelajari al-Quran dan mengajarkannya. (HR al-Bukhari)</small></p>
+        <h1>Rekod hafazan Tamhidi, boleh disemak bila-bila masa.</h1>
+        <p class="lede">eTamhidi menyimpan rekod tasmik Program Tamhidi Ulul Albab bagi setiap pelajar MRSM Sultan Azlan Shah, menggantikan borang transit dan buku catatan.</p>
+        <form class="semakPantas" id="fPantas" role="search">
+          <label for="qPantas" hidden>No. Maktab</label>
+          <input id="qPantas" placeholder="Masukkan No. Maktab anda" autocomplete="off" autocapitalize="characters" maxlength="12" required>
+          <button class="butang">Semak</button>
+        </form>
+        <p class="heroNota">Guru dan pentadbir: <a href="#guru">log masuk ke dashboard</a>.</p>
+      </div>
+      <div class="bintang" aria-label="Purata surah selesai seluruh maktab">
+        <svg viewBox="0 0 400 400" aria-hidden="true">
+          <defs><path id="laluanCincin" d="M200,200 m-172,0 a172,172 0 1,1 344,0 a172,172 0 1,1 -344,0"/></defs>
+          <circle class="garisEmas" cx="200" cy="200" r="186" opacity=".45"/>
+          <circle class="garisEmas" cx="200" cy="200" r="158" opacity=".45"/>
+          <g class="cincin"><text><textPath href="#laluanCincin" startOffset="0">TAMHIDI ULUL ALBAB ۞ MRSM SULTAN AZLAN SHAH ۞ KUALA KANGSAR ۞ TAMHIDI ULUL ALBAB ۞ HAFAZAN ۞</textPath></text></g>
+          <rect class="garisEmas lukis" x="88" y="88" width="224" height="224"/>
+          <rect class="garisEmas lukis" x="88" y="88" width="224" height="224" transform="rotate(45 200 200)"/>
+          <circle class="garisEmas lukis" cx="200" cy="200" r="108"/>
+        </svg>
+        <div class="tengah"><b id="heroPct">–</b><span id="heroLabel">purata surah selesai, seluruh maktab</span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bhg" id="statistik">
+    <div class="bekas">
+      <h2>Pencapaian semasa <span id="lencanaContoh" class="contohLencana" hidden>Data contoh</span></h2>
+      <p class="pengenalan">Ringkasan keseluruhan bagi setiap tingkatan, dikira terus daripada rekod tasmik. Tiada nama pelajar dipaparkan di sini.</p>
+      <ul class="statRingkas" id="statRingkas"></ul>
+      <div class="papan" id="papanTk"><p class="nota" style="padding:16px 0;margin:0">Memuatkan data…</p></div>
+      <div class="petunjuk">
+        <span><i style="background:var(--hijau2)"></i>Tamat semua surah</span>
+        <span><i style="background:var(--emas)"></i>Sedang berjalan</span>
+        <span><i style="background:var(--kelabu)"></i>Belum ada rekod</span>
+        <span>Peratus di kanan ialah purata surah selesai.</span>
+      </div>
+      <p class="statNota" id="statMasa"></p>
     </div>
   </section>
 
-  <!-- SEMAKAN PELAJAR -->
-  <section id="kPelajar" hidden>
+  <section class="bhg tentang" id="tentang">
+    <div class="bekas">
+      <div>
+        <h2>Tentang eTamhidi</h2>
+        <p class="pengenalan" style="margin-bottom:0">Projek eTamhidi merekod dan menyimpan data hafazan semua pelajar Program Tamhidi Ulul Albab di maktab ini. Guru Pendidikan Islam dapat menganalisa kemajuan pelajar dengan tepat, pantas dan sistematik.</p>
+      </div>
+      <ul class="ciri">
+        <li>
+          <svg viewBox="0 0 24 24"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h5"/></svg>
+          <div><h3>Rekod digital</h3><p>Penilaian tasmik direkod terus dalam sistem, bukan lagi pada borang transit atau buku catatan.</p></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <div><h3>Semakan dalam talian</h3><p>Pelajar menyemak keputusan tasmik sendiri pada bila-bila masa, tanpa perlu berjumpa guru.</p></div>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg>
+          <div><h3>Untuk guru, pelajar dan ibu bapa</h3><p>Kemajuan hafazan boleh dipantau oleh semua pihak melalui satu pautan di laman MRSM Sultan Azlan Shah.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bhg" id="cara">
+    <div class="bekas">
+      <h2>Cara menyemak keputusan</h2>
+      <p class="pengenalan">Hanya No. Maktab diperlukan. Keputusan dipaparkan serta-merta.</p>
+      <ol class="langkah">
+        <li><h3>Masukkan No. Maktab</h3><p>Taip No. Maktab anda, contohnya AK261124, di ruang semakan.</p></li>
+        <li><h3>Tekan Semak</h3><p>Sistem mencari rekod anda dalam data Tingkatan 1 hingga 5.</p></li>
+        <li><h3>Lihat status setiap surah</h3><p>Selesai atau Tidak Selesai bagi setiap surah, berserta ulasan guru. Cetak untuk simpanan.</p></li>
+      </ol>
+      <p class="langkahCta"><a class="butang" href="#pelajar">Semak keputusan sekarang</a></p>
+    </div>
+  </section>
+
+  <section class="bhg mushaf" id="visi">
+    <div class="bekas">
+      <div class="bingkai"><div>
+        <h2>Visi</h2>
+        <p class="visi">Melahirkan generasi Qurani yang beriman, bertakwa, berilmu, berakhlak mulia, berkemahiran dan bertanggungjawab, serta mampu berbakti kepada agama, bangsa dan negara.</p>
+        <div class="duaLajur" id="objektif">
+          <div>
+            <h3>Misi</h3>
+            <ol>
+              <li>Membentuk dan mendidik pelajar ke arah kecemerlangan akademik dan sahsiah.</li>
+              <li>Mendekatkan pelajar dengan al-Quran, melahirkan pelajar yang bijak dan soleh, mampu menghadapi cabaran globalisasi serta membawa ummah ke arah kegemilangan tamadun.</li>
+              <li>Mewujudkan persekitaran maktab yang mengamalkan budaya al-Quran dalam kehidupan seharian.</li>
+            </ol>
+          </div>
+          <div>
+            <h3>Objektif program</h3>
+            <ol>
+              <li>Melahirkan generasi Qurani yang beriman, bertakwa, berilmu, berakhlak mulia, berkemahiran dan bertanggungjawab untuk berbakti kepada agama, bangsa dan negara.</li>
+              <li>Membentuk dan mendidik pelajar ke arah kecemerlangan dan keunggulan akademik serta sahsiah.</li>
+              <li>Mendekatkan pelajar dengan al-Quran bagi melahirkan pelajar yang bijak dan soleh, berupaya menghadapi cabaran globalisasi.</li>
+              <li>Mewujudkan persekitaran maktab yang sentiasa mengamalkan al-Quran dalam kehidupan seharian.</li>
+            </ol>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="bhg" id="organisasi">
+    <div class="bekas">
+      <h2>Carta organisasi</h2>
+      <p class="pengenalan">Jawatankuasa Program Tamhidi Ulul Albab MRSM Sultan Azlan Shah.</p>
+      <div class="carta" id="carta"></div>
+    </div>
+  </section>
+
+  <section class="bhg hubungi tentang" id="hubungi">
+    <div class="bekas">
+      <address class="alamat">
+        <h2>Hubungi kami</h2>
+        <dl>
+          <dt>Alamat</dt>
+          <dd>MRSM Sultan Azlan Shah<br>KM 13, Jalan Kuala Kangsar–Gerik<br>Liman Kati, 33020 Kuala Kangsar, Perak</dd>
+          <dt>E-mel (maklumat &amp; aktiviti)</dt>
+          <dd><a href="mailto:kikmrsmsas@mrsmsultanazlanshah.edu.my">kikmrsmsas@mrsmsultanazlanshah.edu.my</a></dd>
+        </dl>
+      </address>
+      <div class="peta"><iframe title="Peta lokasi MRSM Sultan Azlan Shah" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=MRSM+Sultan+Azlan+Shah,+Kuala+Kangsar,+Perak&output=embed"></iframe></div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== SEMAKAN PELAJAR ===================== -->
+<div id="vPelajar" hidden>
+  <div class="jalur"><div class="bekas"><h1>Semakan keputusan pelajar</h1><p>Tamhidi Hafazan, MRSM Sultan Azlan Shah</p></div></div>
+  <div class="kandungan">
     <div class="kad sempit tiadaCetak">
-      <h2>Semakan Keputusan Pelajar</h2>
+      <h2>Masukkan No. Maktab</h2>
       <form id="fSemak">
         <label for="pMaktab">No. Maktab</label>
         <div class="baris">
@@ -140,24 +431,25 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
         </div>
       </form>
       <div id="ralatSemak" class="ralat" hidden></div>
-      <p class="nota" style="margin:14px 0 0;text-align:center"><a href="#">&larr; Kembali ke laman utama</a></p>
     </div>
-    <div id="pHasil" class="kad lebar" hidden></div>
-  </section>
+    <div id="pHasil" class="kad lebarSdg" hidden></div>
+  </div>
+</div>
 
-  <!-- GURU / ADMIN -->
-  <section id="kGuru" hidden>
+<!-- ===================== GURU / ADMIN ===================== -->
+<div id="vGuru" hidden>
+  <div class="jalur"><div class="bekas"><h1>Dashboard guru dan pentadbir</h1><p>Analisa Tamhidi Hafazan mengikut tingkatan, kelas dan homeroom</p></div></div>
+  <div class="kandungan">
   <div id="kLogin" class="kad sempit">
-    <h2>Log Masuk Guru / Admin</h2>
+    <h2>Log masuk</h2>
     <form id="fLogin">
-      <label for="pw">Kata Laluan</label>
+      <label for="pw">Kata laluan</label>
       <div class="baris">
         <input id="pw" type="password" autocomplete="current-password" required>
-        <button class="btn" id="bLogin">Log Masuk</button>
+        <button class="btn" id="bLogin">Log masuk</button>
       </div>
     </form>
     <div id="ralatLogin" class="ralat" hidden></div>
-    <p class="nota" style="margin:14px 0 0;text-align:center"><a href="#">&larr; Kembali ke laman utama</a></p>
   </div>
 
   <div id="kDash" hidden>
@@ -169,17 +461,15 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
     <div class="atas" id="bar">
       <span class="nota" id="masa"></span>
       <span>
-        <a class="btn luar kecil" href="#">Laman Utama</a>
-        <button class="btn luar kecil" id="bSegar">Muat Semula</button>
+        <button class="btn luar kecil" id="bSegar">Muat semula</button>
         <button class="btn luar kecil" id="bCetak">Cetak</button>
-        <button class="btn luar kecil" id="bKeluar">Log Keluar</button>
+        <button class="btn luar kecil" id="bKeluar">Log keluar</button>
       </span>
     </div>
 
-    <!-- TAB 1: SEMAKAN MERENTAS TINGKATAN -->
     <section id="pSemak">
       <div class="kad">
-        <h2>Semakan Keputusan (Semua Tingkatan)</h2>
+        <h2>Semakan keputusan (semua tingkatan)</h2>
         <div class="tapis">
           <div><label for="sCari">No. Maktab</label><input id="sCari" placeholder="Contoh: AK261124" autocomplete="off" autocapitalize="characters" maxlength="12"></div>
           <div><label for="sTk">Tingkatan</label><select id="sTk"></select></div>
@@ -192,16 +482,15 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
       </div>
       <div class="kad" id="sTepat" hidden></div>
       <div class="kad">
-        <div class="atas"><h2 style="margin:0">Keputusan <span id="sBil" class="nota"></span></h2><button class="btn luar kecil" id="sCsv">Muat Turun CSV</button></div>
+        <div class="atas"><h2 style="margin:0">Keputusan <span id="sBil" class="nota"></span></h2><button class="btn luar kecil" id="sCsv">Muat turun CSV</button></div>
         <div class="jadual"><table><thead><tr><th>Bil</th><th>Nama</th><th>Tkt</th><th>Kelas</th><th>No. Maktab</th><th>Homeroom</th><th class="n">Selesai</th><th class="n">TS</th><th>Pencapaian</th></tr></thead><tbody id="sBadan"></tbody></table></div>
         <p class="nota">Klik pada baris pelajar untuk melihat perincian surah.</p>
       </div>
     </section>
 
-    <!-- TAB 2: HOMEROOM -->
     <section id="pHome" hidden>
       <div class="kad">
-        <h2>Semakan Mengikut Homeroom</h2>
+        <h2>Semakan mengikut homeroom</h2>
         <div class="tapis">
           <div><label for="hTk">Tingkatan</label><select id="hTk"></select></div>
           <div><label for="hHome">Homeroom</label><select id="hHome"></select></div>
@@ -209,79 +498,155 @@ footer{text-align:center;font-size:.78rem;color:var(--kabur);padding:16px}
       </div>
       <div class="kpi" id="hKpi"></div>
       <div class="kad">
-        <div class="atas"><h2 style="margin:0" id="hTajuk"></h2><button class="btn luar kecil" id="hCsv">Muat Turun CSV</button></div>
+        <div class="atas"><h2 style="margin:0" id="hTajuk"></h2><button class="btn luar kecil" id="hCsv">Muat turun CSV</button></div>
         <div class="jadual"><table class="matriks"><thead id="hKepala"></thead><tbody id="hBadan"></tbody></table></div>
-        <p class="nota">S = Selesai &middot; TS = Tidak Selesai &middot; &ndash; = belum direkod. Klik baris untuk perincian.</p>
+        <p class="nota">S = Selesai, TS = Tidak Selesai, &ndash; = belum direkod. Klik baris untuk perincian.</p>
       </div>
     </section>
 
-    <!-- TAB 3: ANALISA -->
     <section id="pAnalisa" hidden>
       <div class="kad">
-        <div class="tapis"><div><label for="aSkop">Skop Analisa</label><select id="aSkop"></select></div></div>
+        <div class="tapis"><div><label for="aSkop">Skop analisa</label><select id="aSkop"></select></div></div>
       </div>
       <div class="kpi" id="aKpi"></div>
       <div class="grid2">
-        <div class="kad"><h2>Status Pelajar</h2><div id="aPai1"></div></div>
-        <div class="kad"><h2>Status Bacaan (semua surah)</h2><div id="aPai2"></div></div>
+        <div class="kad"><h2>Status pelajar</h2><div id="aPai1"></div></div>
+        <div class="kad"><h2>Status bacaan (semua surah)</h2><div id="aPai2"></div></div>
       </div>
-      <div class="kad"><h2 id="aT1Tajuk"></h2><div class="jadual"><table><thead><tr><th id="aT1Lajur"></th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">Sedang</th><th class="n">Belum</th><th class="n">% Tamat</th><th>Purata Pencapaian</th></tr></thead><tbody id="aT1"></tbody></table></div></div>
-      <div class="kad" id="aSurahKad"><h2>Peratus Selesai Mengikut Surah</h2><div class="jadual"><table><thead><tr><th>Surah</th><th class="n">Selesai</th><th class="n">Tidak Selesai</th><th class="n">Belum Direkod</th><th>% Selesai</th></tr></thead><tbody id="aSurah"></tbody></table></div></div>
-      <div class="kad"><h2>Kedudukan Homeroom</h2><div class="jadual"><table><thead><tr><th>Bil</th><th>Homeroom</th><th>Tkt</th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">% Tamat</th><th>Purata Pencapaian</th></tr></thead><tbody id="aHome"></tbody></table></div></div>
+      <div class="kad"><h2 id="aT1Tajuk"></h2><div class="jadual"><table><thead><tr><th id="aT1Lajur"></th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">Sedang</th><th class="n">Belum</th><th class="n">% Tamat</th><th>Purata pencapaian</th></tr></thead><tbody id="aT1"></tbody></table></div></div>
+      <div class="kad" id="aSurahKad"><h2>Peratus selesai mengikut surah</h2><div class="jadual"><table><thead><tr><th>Surah</th><th class="n">Selesai</th><th class="n">Tidak selesai</th><th class="n">Belum direkod</th><th>% Selesai</th></tr></thead><tbody id="aSurah"></tbody></table></div></div>
+      <div class="kad"><h2>Kedudukan homeroom</h2><div class="jadual"><table><thead><tr><th>Bil</th><th>Homeroom</th><th>Tkt</th><th class="n">Pelajar</th><th class="n">Tamat</th><th class="n">% Tamat</th><th>Purata pencapaian</th></tr></thead><tbody id="aHome"></tbody></table></div></div>
     </section>
   </div>
-  </section>
-</main>
+  </div>
+</div>
 
-<div class="modal" id="modal" hidden><div class="kad"><div class="atas"><h2 style="margin:0">Perincian Pelajar</h2><button class="btn luar kecil" id="bTutup">Tutup</button></div><div id="isiModal"></div></div></div>
+<div class="modal" id="modal" hidden><div class="kad"><div class="atas"><h2 style="margin:0">Perincian pelajar</h2><button class="btn luar kecil" id="bTutup">Tutup</button></div><div id="isiModal"></div></div></div>
 
-<footer>Dibangunkan Oleh Unit Sains dan Unit ICT MRSM SAS 2026</footer>
+<footer class="kaki">
+  <div class="bekas">
+    <span class="kakiJenama"><img class="logoMrsm" alt="" hidden>Hak cipta terpelihara &copy; <span id="tahun">2026</span> MRSM Sultan Azlan Shah, Kuala Kangsar, Perak</span>
+    <span>Dibangunkan oleh Unit Sains dan Unit ICT MRSM SAS</span>
+  </div>
+</footer>
 
 <script>
 /* ================== TETAPAN ================== */
-const API_URL  = 'https://script.google.com/macros/s/AKfycbwREoGJ-BrkVD5X8VNdA91OLRPOdNru88zCkmjkkDjABlFFqRdFWJD5I1sI4rTwZx7iUA/exec';   // API (guru + pelajar)
-const LOGO_URL = 'logo.png';                                      // cth: 'logo.png' (letak fail dalam repo yang sama)
+const API_URL   = 'https://script.google.com/macros/s/AKfycbwREoGJ-BrkVD5X8VNdA91OLRPOdNru88zCkmjkkDjABlFFqRdFWJD5I1sI4rTwZx7iUA/exec';
+/* Logo MRSM sedia ada: cuba logo.png dalam repo dahulu, kemudian logo di laman Google Sites lama. */
+const LOGO_URL  = ['logo.png',
+  'https://sites.google.com/sitesv-images-rt/AMxu72saZvnxWRhXIQk4eb7wrALpLlIPJSl4VMJVZli0lSg3RtxESEXlJS7Filx4bHcyXbFhVYPNBLnucxFqRq8wjJQUNxTP_mB8cvzRv0U5VB-g0E8nsLpUHL7fjFIXbxDzoRSfgjEEvHoNfK4tk7jp4HEMMIFXonCrpANReSsaesCEqgAHJan78jpN59NjN1Q=w400'];
+const PRATONTON = true;   // true = papar data contoh jika statistik belum tersedia. Tukar ke false selepas Code.gs dikemas kini.
+
+/* Carta organisasi — isi nama di sini. Jawatan boleh ditambah/dibuang. */
+const ORGANISASI = [
+  { aras:'Penaung',    ahli:[{jawatan:'Pengetua', nama:''}] },
+  { aras:'Penasihat',  ahli:[{jawatan:'Timbalan Pengetua (Akademik)', nama:''}, {jawatan:'Timbalan Pengetua (HEP)', nama:''}] },
+  { aras:'Pengerusi',  ahli:[{jawatan:'Ketua Bidang / Ketua Panitia PAI', nama:''}] },
+  { aras:'Setiausaha', ahli:[{jawatan:'Setiausaha Program Tamhidi', nama:''}] },
+  { aras:'Ahli jawatankuasa', ahli:[{jawatan:'Guru Tamhidi Tingkatan 1', nama:''},{jawatan:'Guru Tamhidi Tingkatan 2', nama:''},{jawatan:'Guru Tamhidi Tingkatan 3', nama:''},{jawatan:'Guru Tamhidi Tingkatan 4', nama:''},{jawatan:'Guru Tamhidi Tingkatan 5', nama:''}] },
+  { aras:'Sistem eTamhidi', ahli:[{jawatan:'Unit Sains dan Unit ICT', nama:''}] }
+];
 /* ============================================= */
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const LABEL = {S:'Selesai', TS:'Tidak Selesai', STS:'STS', '':'Belum direkod'};
-const WARNA = {tamat:'#17806a', sedang:'#c79a3b', belum:'#c5cfca', ts:'#c0392b'};
+const WARNA = {tamat:'#1f6e56', sedang:'#b8913a', belum:'#c9d2cd', ts:'#b23a2e'};
+const NAMA_TK = {F1:'Tingkatan 1',F2:'Tingkatan 2',F3:'Tingkatan 3',F4:'Tingkatan 4',F5:'Tingkatan 5'};
+const kurangGerak = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const sesi = {
   get(){ try { return sessionStorage.getItem('etamhidi_token') || ''; } catch(e){ return this._t || ''; } },
   set(t){ this._t = t; try { t ? sessionStorage.setItem('etamhidi_token', t) : sessionStorage.removeItem('etamhidi_token'); } catch(e){} }
 };
 let DATA = null, SEMUA = [], SENARAI_S = [], SENARAI_H = [];
 
-if (LOGO_URL) { $('logo').src = LOGO_URL; $('logo').hidden = false; }
+$('tahun').textContent = new Date().getFullYear();
+let LOGO_SAH = '';
+(function cubaLogo(i){
+  if (i >= LOGO_URL.length) return;
+  const uji = new Image();
+  uji.onload = () => {
+    LOGO_SAH = LOGO_URL[i];
+    document.querySelectorAll('img.logoMrsm').forEach(im => { im.src = LOGO_SAH; im.hidden = false; });
+    $('logoGanti').style.display = 'none';
+  };
+  uji.onerror = () => cubaLogo(i + 1);
+  uji.src = LOGO_URL[i];
+})(0);
 
-/* ---------- Navigasi: #  |  #pelajar  |  #guru ---------- */
-const PAPARAN = {
-  utama:   ['eTamhidi MRSM SAS', 'Tamhidi Hafazan · MRSM Sultan Azlan Shah'],
-  pelajar: ['Semakan Keputusan Pelajar', 'Tamhidi Hafazan · MRSM Sultan Azlan Shah'],
-  guru:    ['Dashboard eTamhidi', 'Analisa Tamhidi Hafazan · Guru / Admin · MRSM Sultan Azlan Shah']
-};
-function laluan(){ const h = location.hash.slice(1).toLowerCase(); return PAPARAN[h] ? h : 'utama'; }
+/* ---------- Navigasi: # (utama + seksyen) | #pelajar | #guru ---------- */
+const VIEW = {pelajar:'vPelajar', guru:'vGuru'};
+const TAJUK = {utama:'eTamhidi MRSM Sultan Azlan Shah', pelajar:'Semakan keputusan · eTamhidi', guru:'Dashboard guru · eTamhidi'};
 function papar(){
-  const v = laluan();
-  $('kUtama').hidden = v !== 'utama';
-  $('kPelajar').hidden = v !== 'pelajar';
-  $('kGuru').hidden = v !== 'guru';
-  $('tajuk').textContent = PAPARAN[v][0]; $('subTajuk').textContent = PAPARAN[v][1];
-  document.title = PAPARAN[v][0] + ' · MRSM SAS';
-  if (v === 'guru' && !DATA) setTimeout(() => $('pw').focus(), 50);
-  if (v === 'pelajar' && $('pHasil').hidden) setTimeout(() => $('pMaktab').focus(), 50);
-  window.scrollTo(0, 0);
+  const h = location.hash.slice(1).toLowerCase(), v = VIEW[h] ? h : 'utama';
+  $('vUtama').hidden = v !== 'utama'; $('vPelajar').hidden = v !== 'pelajar'; $('vGuru').hidden = v !== 'guru';
+  document.title = TAJUK[v];
+  $('menu').classList.remove('buka'); $('burger').setAttribute('aria-expanded','false');
+  if (v === 'utama') {
+    const sasaran = h && document.getElementById(h);
+    sasaran ? sasaran.scrollIntoView() : window.scrollTo(0, 0);
+  } else {
+    window.scrollTo(0, 0);
+    if (v === 'guru' && !DATA) setTimeout(() => $('pw').focus(), 50);
+    if (v === 'pelajar' && $('pHasil').hidden) setTimeout(() => $('pMaktab').focus(), 50);
+  }
 }
 window.addEventListener('hashchange', papar);
+$('burger').onclick = () => { const b = $('menu').classList.toggle('buka'); $('burger').setAttribute('aria-expanded', b); };
 
 async function api(isi) {
-  if (!/^https:\/\/script\.google\.com\//.test(API_URL)) throw new Error('API_URL belum ditetapkan dalam index.html.');
   const r = await fetch(API_URL, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(isi)});
   if (!r.ok) throw new Error('Pelayan tidak dapat dihubungi (' + r.status + ').');
   return r.json();
 }
 function ralat(el, m){ el.textContent = m || ''; el.hidden = !m; }
+
+/* ---------- Statistik awam (agregat sahaja) ---------- */
+const CONTOH = {tingkatan:{
+  F1:{pelajar:148,tamat:41,sedang:89,belum:18,purata:58},
+  F2:{pelajar:152,tamat:63,sedang:80,belum:9,purata:69},
+  F3:{pelajar:145,tamat:78,sedang:61,belum:6,purata:76},
+  F4:{pelajar:139,tamat:92,sedang:44,belum:3,purata:84},
+  F5:{pelajar:131,tamat:101,sedang:28,belum:2,purata:89}}, dikemaskini:null};
+function kiraNaik(el, sasaran){
+  if (kurangGerak) { el.textContent = sasaran + '%'; return; }
+  const mula = performance.now(), tempoh = 1400;
+  (function langkah(t){ const p = Math.min(1, (t - mula) / tempoh), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(sasaran * e) + '%'; if (p < 1) requestAnimationFrame(langkah); })(mula);
+}
+function paparStatistik(d, contoh){
+  const tks = Object.keys(d.tingkatan).sort();
+  let n = 0, ta = 0, sp = 0;
+  tks.forEach(t => { const x = d.tingkatan[t]; n += x.pelajar; ta += x.tamat; sp += x.purata * x.pelajar; });
+  const purata = n ? Math.round(sp / n) : 0;
+  kiraNaik($('heroPct'), purata);
+  $('lencanaContoh').hidden = !contoh;
+  $('statRingkas').innerHTML = [[n.toLocaleString('ms-MY'),'pelajar direkod'],[ta.toLocaleString('ms-MY'),'tamat semua surah'],[(n ? Math.round(ta / n * 100) : 0) + '%','peratus tamat'],[purata + '%','purata surah selesai']]
+    .map(x => `<li><b>${x[0]}</b>${x[1]}</li>`).join('');
+  $('papanTk').innerHTML = tks.map(t => { const x = d.tingkatan[t], j = x.pelajar || 1;
+    return `<div class="tkBaris" title="${x.tamat} tamat, ${x.sedang} sedang berjalan, ${x.belum} belum ada rekod">
+      <span class="nm">${esc(NAMA_TK[t] || t)}<small>${x.pelajar} pelajar</small></span>
+      <span class="tkBar"><i class="t" style="width:${x.tamat / j * 100}%"></i><i class="s" style="width:${x.sedang / j * 100}%"></i><i class="b" style="width:${x.belum / j * 100}%"></i></span>
+      <span class="pc">${x.purata}%</span></div>`; }).join('');
+  $('statMasa').textContent = contoh ? 'Paparan pratonton menggunakan data contoh. Data sebenar dipaparkan selepas API dikemas kini.'
+    : d.dikemaskini ? 'Data setakat ' + new Date(d.dikemaskini).toLocaleString('ms-MY') + '.' : '';
+}
+async function muatStatistik(){
+  try {
+    const d = await api({action:'statistik'});
+    if (d.ok) return paparStatistik(d, false);
+    throw new Error(d.mesej);
+  } catch(err){
+    if (PRATONTON) return paparStatistik(CONTOH, true);
+    $('heroPct').textContent = '–';
+    $('papanTk').innerHTML = '<p class="nota" style="padding:16px 0;margin:0">Statistik tidak dapat dimuatkan sekarang. Sila cuba sebentar lagi.</p>';
+  }
+}
+
+/* ---------- Carta organisasi ---------- */
+$('carta').innerHTML = ORGANISASI.map(a => `<div class="aras"><span class="arasLabel">${esc(a.aras)}</span>${
+  a.ahli.map(x => `<div class="org"><small>${esc(x.jawatan)}</small><b class="${x.nama ? '' : 'kosong'}">${esc(x.nama || 'Nama akan dikemas kini')}</b></div>`).join('')}</div>`).join('');
 
 /* ---------- Pengiraan ---------- */
 function kira(p){
@@ -320,23 +685,24 @@ function kadPelajar(p){
 function bukaModal(p){ if (!p) return; $('isiModal').innerHTML = kadPelajar(p); $('modal').hidden = false; }
 function csv(nama, baris){
   const sel = x => '"' + String(x).replace(/"/g,'""') + '"', a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob(['\ufeff' + baris.map(r => r.map(sel).join(',')).join('\r\n')], {type:'text/csv;charset=utf-8'}));
+  a.href = URL.createObjectURL(new Blob(['﻿' + baris.map(r => r.map(sel).join(',')).join('\r\n')], {type:'text/csv;charset=utf-8'}));
   a.download = nama; a.click(); URL.revokeObjectURL(a.href);
 }
 
-/* ---------- Semakan pelajar (awam, tanpa log masuk) ---------- */
+/* ---------- Semakan pelajar ---------- */
 const ST_LABEL = {tamat:'Tamat semua surah', sedang:'Sedang berjalan', belum:'Belum ada rekod'};
 function kadSemak(d){
   const p = d.pelajar; p.tk = d.tk; const k = kira(p);
-  return `<p class="nota" style="margin:0">Keputusan Tamhidi Hafazan</p>
+  return `${LOGO_SAH ? `<div class="kepalaCetak"><img src="${LOGO_SAH}" alt=""><span>MRSM Sultan Azlan Shah<br><small>Keputusan Tamhidi Hafazan</small></span></div>` : ''}
+    <p class="nota" style="margin:0">Keputusan Tamhidi Hafazan</p>
     <h3 class="pNama">${esc(p.nama)}</h3>
     <span class="statusBesar ${k.st}">${ST_LABEL[k.st]}</span>
     <div class="info">
-      <div><small>Tingkatan</small><b>${esc(d.tk)}</b></div><div><small>Kelas</small><b>${esc(p.kelas)}</b></div>
+      <div><small>Tingkatan</small><b>${esc(NAMA_TK[d.tk] || d.tk)}</b></div><div><small>Kelas</small><b>${esc(p.kelas)}</b></div>
       <div><small>No. Maktab</small><b>${esc(p.maktab)}</b></div><div><small>Homeroom</small><b>${esc(p.homeroom)}</b></div>
     </div>
     <div class="peratus"><span class="trek"><i style="width:${k.pct}%"></i></span><b>${k.pct}%</b></div>
-    <p class="nota" style="margin:0">${k.s} daripada ${k.n} surah selesai${k.ts ? ' · ' + k.ts + ' tidak selesai' : ''}</p>
+    <p class="nota" style="margin:0">${k.s} daripada ${k.n} surah selesai${k.ts ? ', ' + k.ts + ' tidak selesai' : ''}</p>
     <ul class="senarai">${d.surah.map((s,i) => `<li><span>${esc(s)}</span><span class="lencana ${p.status[i]||'X'}">${LABEL[p.status[i]||'']}</span></li>`).join('')}</ul>
     ${p.catatan ? `<div class="ulas"><b>Catatan:</b> ${esc(p.catatan)}</div>` : ''}${p.ulasan ? `<div class="ulas"><b>Ulasan guru:</b> ${esc(p.ulasan)}</div>` : ''}
     ${d.dikemaskini ? `<p class="nota" style="margin:12px 0 0">Data setakat ${esc(new Date(d.dikemaskini).toLocaleString('ms-MY'))}</p>` : ''}
@@ -345,34 +711,39 @@ function kadSemak(d){
       <button class="btn kecil" id="bSemakLain">Semak No. Maktab lain</button>
     </div>`;
 }
-$('fSemak').onsubmit = async e => {
-  e.preventDefault();
+async function semak(){
   const q = $('pMaktab').value.toUpperCase().replace(/[^A-Z0-9]/g, ''), b = $('bSemak');
   ralat($('ralatSemak')); $('pHasil').hidden = true;
   if (q.length < 4) return ralat($('ralatSemak'), 'Sila masukkan No. Maktab yang sah.');
-  b.disabled = true; b.textContent = 'Menyemak...';
+  b.disabled = true; b.textContent = 'Menyemak…';
   try {
     const d = await api({action:'semak', maktab:q});
     if (!d.ok) ralat($('ralatSemak'), d.mesej || 'No. Maktab tidak dijumpai.');
     else {
       $('pHasil').innerHTML = kadSemak(d); $('pHasil').hidden = false;
       $('bSemakLain').onclick = () => { $('pHasil').hidden = true; $('pMaktab').value = ''; $('pMaktab').focus(); };
-      $('pHasil').scrollIntoView({behavior:'smooth', block:'start'});
+      $('pHasil').scrollIntoView({behavior: kurangGerak ? 'auto' : 'smooth', block:'start'});
     }
   } catch(err){ ralat($('ralatSemak'), err.message); }
   b.disabled = false; b.textContent = 'Semak';
+}
+$('fSemak').onsubmit = e => { e.preventDefault(); semak(); };
+$('fPantas').onsubmit = e => {
+  e.preventDefault();
+  $('pMaktab').value = $('qPantas').value.trim().toUpperCase();
+  location.hash = '#pelajar'; semak();
 };
 
-/* ---------- Log masuk & data ---------- */
+/* ---------- Log masuk & data guru ---------- */
 $('fLogin').onsubmit = async e => {
   e.preventDefault();
-  const b = $('bLogin'); ralat($('ralatLogin')); b.disabled = true; b.textContent = 'Menyemak...';
+  const b = $('bLogin'); ralat($('ralatLogin')); b.disabled = true; b.textContent = 'Menyemak…';
   try {
     const d = await api({action:'login', password:$('pw').value});
     if (!d.ok) ralat($('ralatLogin'), d.mesej);
     else { sesi.set(d.token); $('pw').value = ''; await muat(); }
   } catch(err){ ralat($('ralatLogin'), err.message); }
-  b.disabled = false; b.textContent = 'Log Masuk';
+  b.disabled = false; b.textContent = 'Log masuk';
 };
 async function muat(){
   $('bSegar').disabled = true;
@@ -431,7 +802,7 @@ function paparHome(){
   const tk = $('hTk').value, hm = $('hHome').value, d = DATA[tk];
   const ps = d.pelajar.filter(p => p.homeroom === hm).sort((a,b) => a.nama.localeCompare(b.nama));
   SENARAI_H = ps; const r = ringkas(ps);
-  $('hTajuk').textContent = (hm || 'Tiada homeroom') + ' · ' + tk;
+  $('hTajuk').textContent = (hm || 'Tiada homeroom') + ', ' + tk;
   $('hKpi').innerHTML = [[r.n,'Jumlah pelajar'],[r.purata+'%','Purata pencapaian'],[r.tamat,'Tamat semua surah'],[r.sedang,'Sedang berjalan'],[r.belum,'Belum ada rekod']]
     .map(x => `<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');
   $('hKepala').innerHTML = `<tr><th>Nama</th><th>Kelas</th>${d.surah.map(s => `<th class="s" title="${esc(s)}">${esc(s)}</th>`).join('')}<th class="n">Selesai</th><th>Pencapaian</th></tr>`;
@@ -456,17 +827,14 @@ function paparAnalisa(){
   $('aPai1').innerHTML = pai([{l:'Tamat semua surah', v:r.tamat, w:WARNA.tamat},{l:'Sedang berjalan', v:r.sedang, w:WARNA.sedang},{l:'Belum ada rekod', v:r.belum, w:WARNA.belum}]);
   const s = ps.reduce((a,p) => a + p.k.s, 0), ts = ps.reduce((a,p) => a + p.k.ts, 0), n = ps.reduce((a,p) => a + p.k.n, 0);
   $('aPai2').innerHTML = pai([{l:'Selesai (S)', v:s, w:WARNA.tamat},{l:'Tidak selesai (TS)', v:ts, w:WARNA.ts},{l:'Belum direkod', v:n - s - ts, w:WARNA.belum}]);
-
-  $('aT1Tajuk').textContent = tk ? 'Pencapaian Mengikut Kelas (' + tk + ')' : 'Pencapaian Mengikut Tingkatan';
+  $('aT1Tajuk').textContent = tk ? 'Pencapaian mengikut kelas (' + tk + ')' : 'Pencapaian mengikut tingkatan';
   $('aT1Lajur').textContent = tk ? 'Kelas' : 'Tingkatan';
   const g = kumpul(ps, p => tk ? (p.kelas || '(Tiada)') : p.tk);
-  $('aT1').innerHTML = [...g.keys()].sort().map(k => barisRingkas(k, g.get(k))).join('') + (g.size > 1 ? barisRingkas('JUMLAH', ps).replace('<tr>', '<tr style="font-weight:700">') : '');
-
+  $('aT1').innerHTML = [...g.keys()].sort().map(k => barisRingkas(k, g.get(k))).join('') + (g.size > 1 ? barisRingkas('JUMLAH', ps).replace('<tr>', '<tr style="font-weight:600">') : '');
   $('aSurahKad').hidden = !tk;
   if (tk) $('aSurah').innerHTML = DATA[tk].surah.map((nm,i) => {
     const a = ps.filter(p => p.status[i] === 'S').length, b = ps.filter(p => p.status[i] === 'TS' || p.status[i] === 'STS').length;
     return `<tr><td>${esc(nm)}</td><td class="n">${a}</td><td class="n">${b}</td><td class="n">${ps.length - a - b}</td><td>${bar(ps.length ? Math.round(a / ps.length * 100) : 0)}</td></tr>`; }).join('');
-
   const h = kumpul(ps, p => p.tk + '|' + (p.homeroom || '(Tiada)'));
   $('aHome').innerHTML = [...h.entries()].map(([k,arr]) => ({k, r:ringkas(arr)})).sort((a,b) => b.r.purata - a.r.purata || b.r.pTamat - a.r.pTamat)
     .map((x,i) => { const [t,nm] = x.k.split('|');
@@ -475,6 +843,7 @@ function paparAnalisa(){
 $('aSkop').onchange = paparAnalisa;
 
 papar();
+muatStatistik();
 if (sesi.get()) muat();
 </script>
 </body>
